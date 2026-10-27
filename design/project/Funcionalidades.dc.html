@@ -12,184 +12,100 @@
 <helmet>
 <style>
 body{margin:0}
-a{color:#1b1c1e}a:hover{color:#5c5e5d}
+a{color:#1b1c1e}a:hover{color:#c8401e}
 </style>
 </helmet>
-<div class="mw-page" style="font-family: var(--font-sans); color: var(--ink); background: var(--canvas);">
+<div class="mw-page" style="font-family: var(--font-sans); color: var(--ink); background: var(--surface);">
 <dc-import name="Nav" current="func" hint-size="100%,72px"></dc-import>
 <main>
 
-<section class="mw-hero" aria-labelledby="h-top">
+<section class="mw-hero" style="padding-bottom: 56px;" aria-labelledby="h-top">
   <div class="mw-wrap">
-    <div class="mw-head" style="margin-bottom: 32px;">
-      <span class="ms-label ms-label--plain">// Funcionalidades</span>
-      <h1 id="h-top" class="mw-h1">Lo que hace tu agente, sin rodeos.</h1>
-      <p class="mw-lead">Estas son las funciones de mostrador_. Las conversaciones y catálogos que ves en esta página son ejemplos ilustrativos con productos ficticios.</p>
-    </div>
-    <div class="mw-card mw-card--canvas" style="flex-direction: row; flex-wrap: wrap; gap: 12px 32px; padding: 16px 20px;">
-      <span class="mw-small"><span class="ms-tag ms-tag--ink">Función</span> lo que hace mostrador_</span>
-      <span class="mw-small"><span class="ms-tag ms-tag--guess">ilustrativo</span> ejemplo para que te des una idea, no un sistema conectado</span>
+    <div class="mw-head" style="margin-bottom: 0;">
+      <span class="mw-kicker">// Funcionalidades</span>
+      <h1 id="h-top" class="mw-h1">Lo que hace tu agente, <em class="mw-accent">sin rodeos</em><span class="mw-cursor" aria-hidden="true">_</span></h1>
+      <p class="mw-small">Los ejemplos de esta página son ilustrativos, con productos ficticios.</p>
     </div>
   </div>
 </section>
 
-<!-- 1 -->
-<section class="mw-sec mw-sec--surface" aria-labelledby="h-f1">
-  <div class="mw-wrap mw-split">
-    <div class="mw-stack">
-      <span class="ms-label">// 01 · Inventario e información de productos</span>
-      <h2 id="h-f1" class="mw-h2">Tus productos, en un solo lugar para el agente.</h2>
-      <p class="mw-lead">Cargas la información de tus productos en mostrador_: nombre, identificador, características, precio y existencia. Esa es la base de todo lo que contesta el agente.</p>
-      <span><span class="ms-tag ms-tag--ink">Función</span></span>
-    </div>
-    <div class="mw-stack-sm">
-      <div class="mw-device">
-        <div class="mw-device__bar"><span>Catálogo · Tienda de electrónica de ejemplo</span><span>3 productos</span></div>
-        <div class="mw-scroll">
-        <table class="ms-table" style="border: 0; min-width: 520px;">
-          <thead><tr><th>Producto</th><th style="text-align: right;">Precio</th><th style="text-align: right;">Existencia</th></tr></thead>
-          <tbody>
-            <tr><td><div class="ms-table__name">Audífonos inalámbricos Pulso</div><div class="ms-table__sub"><span class="ms-mono">SKU AP-310</span> · Bluetooth 5.3 · hasta 30 h de batería</div></td><td class="num">$899.00</td><td class="num">4</td></tr>
-            <tr><td><div class="ms-table__name">Audífonos Pulso Sport</div><div class="ms-table__sub"><span class="ms-mono">SKU AP-320</span> · gancho de oreja · resistentes al sudor</div></td><td class="num">$1,099.00</td><td class="num">0</td></tr>
-            <tr><td><div class="ms-table__name">Bocina portátil Eco</div><div class="ms-table__sub"><span class="ms-mono">SKU BP-110</span> · 10 W · resistente a salpicaduras</div></td><td class="num">$749.00</td><td class="num">6</td></tr>
-          </tbody>
-        </table>
+<section class="mw-sec" style="padding-top: 0;" aria-label="Funciones">
+  <div class="mw-wrap mw-grid mw-cols-3" style="gap: 20px;">
+
+    <article class="mw-card mw-card--hover mw-span-2">
+      <span class="mw-kicker">01 · Inventario</span>
+      <h2 class="mw-h3" style="font-size: 26px; line-height: 32px;">Tus productos, en un solo lugar.</h2>
+      <p class="mw-p">Nombre, características, precio y existencia: la base de cada respuesta.</p>
+      <div class="mw-device" style="margin-top: 8px;">
+        <div class="mw-tbl">
+          <div class="mw-tbl__head"><span>Producto</span><span>Precio</span><span>Hay</span></div>
+          <div class="mw-tbl__row" style="border-top: 0;"><div><div class="ms-table__name">Audífonos Pulso</div><div class="ms-table__sub">Bluetooth 5.3 · hasta 30 h</div></div><div class="mw-tbl__num">$899.00</div><div class="mw-tbl__num">4</div></div>
+          <div class="mw-tbl__row"><div><div class="ms-table__name">Bocina Eco</div><div class="ms-table__sub">10 W · resiste salpicaduras</div></div><div class="mw-tbl__num">$749.00</div><div class="mw-tbl__num">6</div></div>
         </div>
       </div>
-      <span><span class="ms-tag ms-tag--guess">ilustrativo</span></span>
-    </div>
-  </div>
-</section>
+    </article>
 
-<!-- 2 -->
-<section class="mw-sec" aria-labelledby="h-f2">
-  <div class="mw-wrap mw-split">
-    <div class="mw-stack">
-      <span class="ms-label">// 02 · Conversaciones con IA</span>
-      <h2 id="h-f2" class="mw-h2">Atiende a tus clientes por WhatsApp.</h2>
-      <p class="mw-lead">Un agente de IA contesta los mensajes de tus clientes en WhatsApp. Entiende la pregunta, busca en tu catálogo y responde en lenguaje natural, como lo haría alguien de tu mostrador.</p>
-      <span><span class="ms-tag ms-tag--ink">Función</span></span>
-    </div>
-    <div class="mw-stack-sm">
-      <div class="mw-device">
-        <div class="mw-device__bar"><span>WhatsApp</span><span>ilustrativo</span></div>
-        <div class="mw-device__body ms-transcript mw-chat">
-          <div class="ms-msg"><div class="ms-msg__bubble">oye, ¿tienes alguna bocina que aguante si le cae agua?</div><span class="ms-msg__meta">12:10</span></div>
-          <div class="ms-msg ms-msg--ours ms-msg--bot"><div class="ms-msg__bubble">La bocina portátil Eco es resistente a salpicaduras. Es de 10 W, está en $749.00 y hay 6.</div><span class="ms-msg__meta"><b>bot</b> · 12:10</span></div>
-        </div>
+    <article class="mw-card mw-card--ink" style="justify-content: space-between;">
+      <span class="mw-kicker" style="color: var(--signal-on-ink);">02 · Conversaciones con IA</span>
+      <h2 class="mw-h3" style="font-size: 26px; line-height: 32px;">Atiende por WhatsApp, en lenguaje natural.</h2>
+      <div class="ms-transcript mw-chat">
+        <div class="ms-msg"><div class="ms-msg__bubble">¿tienes bocina que aguante agua?</div></div>
+        <div class="ms-msg ms-msg--ours ms-msg--bot"><div class="ms-msg__bubble">La Eco resiste salpicaduras. $749.00, hay 6.</div></div>
       </div>
-      <span><span class="ms-tag ms-tag--guess">ilustrativo</span></span>
-    </div>
+    </article>
+
+    <article class="mw-card mw-card--hover">
+      <span class="mw-kicker">03 · Características y precios</span>
+      <h2 class="mw-h3" style="font-size: 26px; line-height: 32px;">Qué es y cuánto cuesta.</h2>
+      <p class="mw-p">Con lo que dice cada ficha. Lo que no está, no lo inventa.</p>
+    </article>
+
+    <article class="mw-card mw-card--hover">
+      <span class="mw-kicker">04 · Disponibilidad</span>
+      <h2 class="mw-h3" style="font-size: 26px; line-height: 32px;">Dice si hay.</h2>
+      <p class="mw-p">Con la existencia registrada al momento. Tenerla al día es la clave.</p>
+    </article>
+
+    <article class="mw-card mw-card--hover" style="background: var(--signal-tint); border-color: var(--signal-line);">
+      <span class="mw-kicker">05 · Apartados</span>
+      <h2 class="mw-h3" style="font-size: 26px; line-height: 32px;">Registra apartados, con permiso.</h2>
+      <p class="mw-p" style="color: var(--ink);">Solo si el cliente autoriza y tus reglas lo permiten. Luego le dice cómo quedó.</p>
+      <span class="ms-hold__code" style="font-size: 28px; line-height: 32px; margin-top: auto;">W-2NQZ</span>
+    </article>
+
   </div>
 </section>
 
-<!-- 3 -->
-<section class="mw-sec mw-sec--surface" aria-labelledby="h-f3">
-  <div class="mw-wrap mw-split">
-    <div class="mw-stack">
-      <span class="ms-label">// 03 · Características y precios</span>
-      <h2 id="h-f3" class="mw-h2">Contesta qué es y cuánto cuesta.</h2>
-      <p class="mw-lead">Responde preguntas sobre las características de tus productos y sus precios con la información de cada ficha. Si la ficha no tiene un dato, no lo inventa.</p>
-      <span><span class="ms-tag ms-tag--ink">Función</span></span>
-    </div>
-    <div class="mw-stack-sm">
-      <div class="mw-device">
-        <div class="mw-device__bar"><span>WhatsApp</span><span>ilustrativo</span></div>
-        <div class="mw-device__body ms-transcript mw-chat">
-          <div class="ms-msg"><div class="ms-msg__bubble">¿qué diferencia hay entre los Pulso y los Pulso Sport?</div><span class="ms-msg__meta">12:30</span></div>
-          <div class="ms-msg ms-msg--ours ms-msg--bot"><div class="ms-msg__bubble">Los Pulso son Bluetooth 5.3 con hasta 30 h de batería, en $899.00. Los Pulso Sport tienen gancho de oreja y son resistentes al sudor, en $1,099.00.</div><span class="ms-msg__meta"><b>bot</b> · 12:30</span></div>
-          <div class="ms-msg"><div class="ms-msg__bubble">¿y los Sport cuánto duran de pila?</div><span class="ms-msg__meta">12:31</span></div>
-          <div class="ms-msg ms-msg--ours ms-msg--bot"><div class="ms-msg__bubble">Ese dato no está en la ficha de los Pulso Sport, así que no te lo puedo confirmar.</div><span class="ms-msg__meta"><b>bot</b> · 12:31</span></div>
-        </div>
-      </div>
-      <span><span class="ms-tag ms-tag--guess">ilustrativo</span></span>
-    </div>
-  </div>
-</section>
-
-<!-- 4 -->
-<section class="mw-sec" aria-labelledby="h-f4">
-  <div class="mw-wrap mw-split">
-    <div class="mw-stack">
-      <span class="ms-label">// 04 · Disponibilidad</span>
-      <h2 id="h-f4" class="mw-h2">Dice si hay, con los datos que tiene.</h2>
-      <p class="mw-lead">El agente contesta la existencia con la información de inventario que tiene mostrador_ al momento de la conversación. Mantener tus existencias al día es lo que hace que esa respuesta sea correcta.</p>
-      <span><span class="ms-tag ms-tag--ink">Función</span></span>
-    </div>
-    <div class="mw-stack-sm">
-      <div class="mw-device">
-        <div class="mw-device__bar"><span>WhatsApp</span><span>ilustrativo</span></div>
-        <div class="mw-device__body ms-transcript mw-chat">
-          <div class="ms-msg"><div class="ms-msg__bubble">¿hay Pulso Sport?</div><span class="ms-msg__meta">18:02</span></div>
-          <div class="ms-msg ms-msg--ours ms-msg--bot"><div class="ms-msg__bubble">Ahorita no hay Pulso Sport en existencia. Los Pulso, sin gancho, sí: hay 4 en $899.00.</div><span class="ms-msg__meta"><b>bot</b> · 18:02</span></div>
-        </div>
-      </div>
-      <span><span class="ms-tag ms-tag--guess">ilustrativo</span></span>
-    </div>
-  </div>
-</section>
-
-<!-- 5 -->
-<section class="mw-sec mw-sec--surface" aria-labelledby="h-f5">
-  <div class="mw-wrap mw-split">
-    <div class="mw-stack">
-      <span class="ms-label">// 05 · Registro de apartados</span>
-      <h2 id="h-f5" class="mw-h2">Registra apartados, con permiso.</h2>
-      <p class="mw-lead">El agente puede registrar el apartado de un producto. Solo lo hace cuando el cliente lo autoriza y se cumplen las reglas de tu negocio. Después le dice al cliente el estado real: registrado, o por qué no se pudo.</p>
-      <span><span class="ms-tag ms-tag--ink">Función</span></span>
-      <p class="mw-small">Qué productos se pueden apartar y bajo qué condiciones depende de cómo trabaje tu negocio.</p>
-    </div>
-    <div class="mw-stack-sm">
-      <div class="mw-device">
-        <div class="mw-device__bar"><span>WhatsApp</span><span>ilustrativo</span></div>
-        <div class="mw-device__body ms-transcript mw-chat">
-          <div class="ms-msg"><div class="ms-msg__bubble">apártame una bocina Eco</div><span class="ms-msg__meta">12:12</span></div>
-          <div class="ms-msg ms-msg--ours ms-msg--bot"><div class="ms-msg__bubble">Puedo registrar el apartado de 1 bocina portátil Eco a tu nombre. ¿Lo registro?</div><span class="ms-msg__meta"><b>bot</b> · 12:12</span></div>
-          <div class="ms-msg"><div class="ms-msg__bubble">sí porfa, soy Daniel</div><span class="ms-msg__meta">12:13</span></div>
-          <div class="ms-day">– el cliente autorizó el apartado –</div>
-          <div class="ms-msg ms-msg--ours ms-msg--bot"><div class="ms-msg__bubble">Quedó registrado con el código W-2NQZ.</div><span class="ms-msg__meta"><b>bot</b> · 12:13</span></div>
-        </div>
-      </div>
-      <span><span class="ms-tag ms-tag--guess">ilustrativo</span></span>
-    </div>
-  </div>
-</section>
-
-<!-- Lo que no promete -->
-<section class="mw-sec" aria-labelledby="h-no">
-  <div class="mw-wrap mw-split mw-split--top">
-    <div class="mw-stack">
-      <span class="ms-label">// Claridad</span>
-      <h2 id="h-no" class="mw-h2">Lo que mostrador_ no hace.</h2>
-      <p class="mw-lead">Para que sepas qué esperar.</p>
-    </div>
-    <div class="mw-rules">
-      <div class="mw-rule"><span class="mw-rule__k">// No inventa</span><p class="mw-p">Si un dato no está en tu información, no lo completa por su cuenta.</p></div>
-      <div class="mw-rule"><span class="mw-rule__k">// No aparta solo</span><p class="mw-p">No registra un apartado sin la autorización del cliente ni fuera de las reglas de tu negocio.</p></div>
-      <div class="mw-rule"><span class="mw-rule__k">// No adivina compatibilidades</span><p class="mw-p">Por ejemplo, si una refacción le queda a un auto: solo lo dice si está en tu catálogo.</p></div>
-      <div class="mw-rule"><span class="mw-rule__k">// No garantiza ventas</span><p class="mw-p">Te ayuda a contestar a tus clientes y a avanzar la conversación. La venta sigue siendo de tu negocio.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="mw-sec mw-sec--surface" aria-labelledby="h-cta">
+<section class="mw-sec mw-sec--ink" aria-labelledby="h-no">
   <div class="mw-wrap">
-    <div class="mw-card" style="padding: 48px; gap: 20px; align-items: flex-start; border-color: var(--ink);">
-      <h2 id="h-cta" class="mw-h2">Ve estas funciones en acción.</h2>
-      <p class="mw-lead">Te mostramos cómo funcionaría con productos como los tuyos.</p>
-      <div class="mw-actions">
-        <a class="ms-btn ms-btn--primary mw-btn-lg" href="Demo.dc.html">Solicitar demo</a>
-        <a class="ms-link" href="CasosDeUso.dc.html">Ver casos de uso →</a>
-      </div>
+    <div class="mw-head">
+      <span class="mw-kicker">// Para que sepas qué esperar</span>
+      <h2 id="h-no" class="mw-h2">Lo que <em class="mw-accent">no</em> hace.</h2>
+    </div>
+    <div class="mw-grid mw-cols-4" style="gap: 32px;">
+      <div class="mw-rule" style="border-top-color: var(--signal-on-ink);"><span class="mw-rule__k">No inventa</span><p class="mw-p">Si falta un dato, lo dice.</p></div>
+      <div class="mw-rule" style="border-top-color: var(--signal-on-ink);"><span class="mw-rule__k">No aparta solo</span><p class="mw-p">Siempre con autorización del cliente.</p></div>
+      <div class="mw-rule" style="border-top-color: var(--signal-on-ink);"><span class="mw-rule__k">No adivina compatibilidades</span><p class="mw-p">Solo si están en tu catálogo.</p></div>
+      <div class="mw-rule" style="border-top-color: var(--signal-on-ink);"><span class="mw-rule__k">No garantiza ventas</span><p class="mw-p">La venta sigue siendo de tu negocio.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="mw-sec mw-sec--red" aria-labelledby="h-cta">
+  <div class="mw-wrap mw-split">
+    <h2 id="h-cta" class="mw-h2">Velo <em class="mw-accent">en acción.</em></h2>
+    <div class="mw-actions">
+      <a class="ms-btn mw-cta mw-cta--ink mw-btn-lg" href="Demo.dc.html">Solicitar demo</a>
+      <a class="ms-btn mw-ghost mw-btn-lg" href="CasosDeUso.dc.html">Ver casos de uso</a>
     </div>
   </div>
 </section>
 
 </main>
-<dc-import name="Footer" hint-size="100%,380px"></dc-import>
+<dc-import name="Footer" hint-size="100%,220px"></dc-import>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4600}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2800}}'>
 class Component extends DCLogic {
   renderVals() { return {}; }
 }

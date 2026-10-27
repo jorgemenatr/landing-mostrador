@@ -12,44 +12,28 @@
 <helmet>
 <style>body{margin:0}</style>
 </helmet>
-<footer class="mw-foot" style="font-family: var(--font-sans); color: var(--ink);">
+<footer class="mw-foot" style="font-family: var(--font-sans); color: var(--on-ink); background: var(--ink);">
   <div class="mw-wrap">
     <div class="mw-foot__top">
-      <div class="mw-stack-sm">
-        <a href="Main.dc.html" class="mw-nav__logo" aria-label="mostrador_, ir al inicio" style="align-self: flex-start;">
-          <span class="ms-brand"><span class="ms-brand__mark" aria-hidden="true">m<b>_</b></span><span class="ms-brand__name" aria-hidden="true">mostrador<b>_</b></span></span>
-        </a>
-        <p class="mw-p" style="max-width: 360px;">El encargado virtual que conoce tus productos y atiende a tus clientes por WhatsApp.</p>
-        <div class="mw-actions" style="margin-top: 8px;">
-          <a class="ms-btn ms-btn--primary" href="Demo.dc.html">Solicitar demo</a>
-        </div>
-      </div>
-      <div class="mw-foot__cols">
-        <nav class="mw-foot__col" aria-label="Producto">
-          <span class="ms-label ms-label--plain">// Producto</span>
-          <a href="ComoFunciona.dc.html">Cómo funciona</a>
-          <a href="Funcionalidades.dc.html">Funcionalidades</a>
-          <a href="CasosDeUso.dc.html">Casos de uso</a>
-        </nav>
-        <nav class="mw-foot__col" aria-label="Ayuda">
-          <span class="ms-label ms-label--plain">// Ayuda</span>
-          <a href="PreguntasFrecuentes.dc.html">Preguntas frecuentes</a>
-          <a href="Demo.dc.html">Solicitar demo</a>
-        </nav>
-        <div class="mw-foot__col">
-          <span class="ms-label ms-label--plain">// Inicio</span>
-          <a href="Main.dc.html">Volver al inicio</a>
-        </div>
-      </div>
+      <a href="Main.dc.html" class="mw-nav__logo" aria-label="mostrador_, ir al inicio">
+        <span class="ms-brand"><span class="ms-brand__mark" aria-hidden="true">m<b>_</b></span><span class="ms-brand__name" aria-hidden="true">mostrador<b>_</b></span></span>
+      </a>
+      <nav class="mw-foot__links" aria-label="Sitio">
+        <a href="ComoFunciona.dc.html">Cómo funciona</a>
+        <a href="Funcionalidades.dc.html">Funcionalidades</a>
+        <a href="CasosDeUso.dc.html">Casos de uso</a>
+        <a href="PreguntasFrecuentes.dc.html">Preguntas frecuentes</a>
+      </nav>
+      <a class="ms-btn mw-cta" href="Demo.dc.html">Solicitar demo</a>
     </div>
     <div class="mw-foot__bottom">
-      <span>mostrador<span style="color: var(--signal);">_</span></span>
-      <span>Las conversaciones y productos de este sitio son ejemplos ilustrativos.</span>
+      <span>El encargado virtual que conoce lo que vendes.</span>
+      <span>Conversaciones y productos de este sitio: ejemplos ilustrativos.</span>
     </div>
   </div>
 </footer>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":380}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":220}}'>
 class Component extends DCLogic {
   renderVals() { return {}; }
 }

@@ -12,177 +12,119 @@
 <helmet>
 <style>
 body{margin:0}
-a{color:#1b1c1e}a:hover{color:#5c5e5d}
+a{color:#1b1c1e}a:hover{color:#c8401e}
 </style>
 </helmet>
-<div class="mw-page" style="font-family: var(--font-sans); color: var(--ink); background: var(--canvas);">
+<div class="mw-page" style="font-family: var(--font-sans); color: var(--ink); background: var(--surface);">
 <dc-import name="Nav" current="inicio" hint-size="100%,72px"></dc-import>
 <main>
 
-<!-- 1 · Héroe -->
+<!-- Héroe -->
 <section class="mw-hero" aria-labelledby="h-hero">
   <div class="mw-wrap mw-split">
-    <div class="mw-stack">
-      <span class="ms-label ms-label--plain">// Atención por WhatsApp para negocios con inventario</span>
-      <h1 id="h-hero" class="mw-h1">Tu negocio atiende. Aunque tú estés ocupado.</h1>
-      <p class="mw-lead">mostrador_ crea un agente de IA que conoce tus productos, responde preguntas sobre precios y disponibilidad, y ayuda a tus clientes a avanzar hacia una compra, directamente por WhatsApp.</p>
+    <div class="mw-stack" style="gap: 28px;">
+      <span class="mw-kicker">// Tu mostrador, también en WhatsApp</span>
+      <h1 id="h-hero" class="mw-h1">Tu negocio atiende. Aunque tú estés <em class="mw-accent">ocupado</em><span class="mw-cursor" aria-hidden="true">_</span></h1>
+      <p class="mw-lead">Un agente de IA que conoce tu inventario y contesta a tus clientes por WhatsApp: precios, existencias y apartados.</p>
       <div class="mw-actions">
-        <a class="ms-btn ms-btn--primary mw-btn-lg" href="Demo.dc.html">Solicitar demo</a>
-        <a class="ms-btn mw-btn-lg" href="#como-funciona">Ver cómo funciona</a>
+        <a class="ms-btn mw-cta mw-btn-lg" href="Demo.dc.html">Solicitar demo</a>
+        <a class="ms-btn mw-ghost mw-btn-lg" href="#demo">Ver cómo atiende</a>
       </div>
     </div>
-    <figure class="mw-hero-vis" aria-label="Ejemplo ilustrativo: el agente toma los datos del catálogo para contestar a un cliente por WhatsApp">
-      <div class="mw-device mw-hero-vis__cat">
-        <div class="mw-device__bar"><span>Tu catálogo</span><span>3 de 214 productos</span></div>
-        <div class="mw-tbl" style="border: 0;">
-          <div class="mw-tbl__head"><span>Producto</span><span>Precio</span><span>Existencia</span></div>
-          <div class="mw-tbl__row mw-tbl__row--used">
-            <div><div class="ms-table__name">Tenis urbanos Brisa blanco</div><div class="ms-table__sub"><span class="ms-mono">SKU TB-2701</span> · piel sintética · tallas 25 a 28</div></div>
+    <figure class="mw-hero__vis" style="margin: 0;" aria-label="Ejemplo ilustrativo: el agente usa el catálogo para contestar por WhatsApp">
+      <div class="mw-device mw-hero__chat">
+        <div class="mw-device__bar"><span><b>•</b> WhatsApp · Zapatería de ejemplo</span><span>ilustrativo</span></div>
+        <div class="mw-device__body ms-transcript mw-chat">
+          <div class="ms-msg mw-pop mw-d1"><div class="ms-msg__bubble">¿tienen los tenis Brisa en 27?</div><span class="ms-msg__meta">11:02</span></div>
+          <div class="ms-msg ms-msg--ours ms-msg--bot mw-pop mw-d2"><div class="ms-msg__bubble">Sí, en blanco hay 3 pares en 27. Están en $1,149.00.</div><span class="ms-msg__meta"><b>bot</b> · 11:02</span></div>
+          <div class="ms-msg mw-pop mw-d3"><div class="ms-msg__bubble">¿me apartas unos?</div><span class="ms-msg__meta">11:03</span></div>
+          <div class="ms-msg ms-msg--ours ms-msg--bot mw-pop mw-d4"><div class="ms-msg__bubble">Listo, quedó registrado con el código R-4K7M.</div><span class="ms-msg__meta"><b>bot</b> · 11:03</span></div>
+        </div>
+      </div>
+      <div class="mw-device mw-hero__cat">
+        <div class="mw-device__bar"><span>Tu catálogo</span><span>214 productos</span></div>
+        <div class="mw-tbl">
+          <div class="mw-tbl__row mw-tbl__row--used" style="border-top: 0;">
+            <div><div class="ms-table__name">Tenis Brisa blanco</div><div class="mw-used">bot&gt; usó este producto</div></div>
             <div class="mw-tbl__num">$1,149.00</div>
             <div class="mw-tbl__num">3<small>talla 27</small></div>
           </div>
           <div class="mw-tbl__row">
-            <div><div class="ms-table__name">Tenis urbanos Brisa negro</div><div class="ms-table__sub"><span class="ms-mono">SKU TB-2702</span> · piel sintética · tallas 25 a 28</div></div>
+            <div><div class="ms-table__name">Tenis Brisa negro</div></div>
             <div class="mw-tbl__num">$1,149.00</div>
             <div class="mw-tbl__num">0<small>talla 27</small></div>
           </div>
-          <div class="mw-tbl__row">
-            <div><div class="ms-table__name">Sandalia Marea café</div><div class="ms-table__sub"><span class="ms-mono">SKU SM-1104</span> · tallas 23 a 26</div></div>
-            <div class="mw-tbl__num">$649.00</div>
-            <div class="mw-tbl__num">8<small>total</small></div>
-          </div>
         </div>
       </div>
-      <div class="mw-hero-vis__link" aria-hidden="true">bot&gt; busca en tu catálogo → contesta con esos datos ↓</div>
-      <div class="mw-device mw-hero-vis__chat">
-        <div class="mw-device__bar"><span>WhatsApp · Zapatería de ejemplo</span><span>hoy</span></div>
-        <div class="mw-device__body ms-transcript mw-chat">
-          <div class="ms-msg"><div class="ms-msg__bubble">hola, ¿tienen los tenis Brisa en 27?</div><span class="ms-msg__meta">11:02</span></div>
-          <div class="ms-msg ms-msg--ours ms-msg--bot"><div class="ms-msg__bubble">Sí. En blanco hay 3 pares en talla 27, están en $1,149.00. En negro ya no hay en 27.</div><span class="ms-msg__meta"><b>bot</b> · 11:02</span></div>
-          <div class="ms-msg"><div class="ms-msg__bubble">va, ¿me apartas unos blancos?</div><span class="ms-msg__meta">11:03</span></div>
-        </div>
-      </div>
-      <figcaption class="mw-illus">Ejemplo ilustrativo · productos y conversación ficticios</figcaption>
     </figure>
   </div>
 </section>
 
-<!-- 2 · El problema de todos los días -->
-<section class="mw-sec mw-sec--surface" aria-labelledby="h-problema">
-  <div class="mw-wrap mw-split mw-split--top">
-    <div class="mw-stack">
-      <span class="ms-label">// Lo de todos los días</span>
-      <h2 id="h-problema" class="mw-h2">Cada mensaje es una oportunidad de venta.</h2>
-      <p class="mw-lead">Tus clientes escriben para preguntar si tienes algo, cuánto cuesta y si les queda. Contestar bien toma tiempo, y casi siempre llegan cuando el mostrador está lleno.</p>
-      <div class="ms-list" aria-label="Ejemplo de mensajes sin contestar">
-        <div class="ms-conv ms-conv--wait"><span class="ms-conv__dot" aria-hidden="true">•</span><div><div class="ms-conv__who">+52 ··· 0142</div><div class="ms-conv__last">¿cuánto cuesta el de 1/2 pulgada?</div></div><span class="ms-conv__time">hace 18 min</span></div>
-        <div class="ms-conv ms-conv--wait"><span class="ms-conv__dot" aria-hidden="true">•</span><div><div class="ms-conv__who">+52 ··· 7730</div><div class="ms-conv__last">¿lo tienen en talla mediana?</div></div><span class="ms-conv__time">hace 9 min</span></div>
-        <div class="ms-conv"><span class="ms-conv__dot" aria-hidden="true">○</span><div><div class="ms-conv__who">+52 ··· 2218</div><div class="ms-conv__last">¿todavía hay del modelo que publicaron?</div></div><span class="ms-conv__time">hace 2 min</span></div>
-      </div>
-      <span class="mw-illus">Ejemplo ilustrativo</span>
-    </div>
-    <div class="mw-grid mw-cols-2">
-      <div class="mw-card"><h3 class="mw-h3">Preguntan lo mismo todo el día</h3><p class="mw-p">Precio, talla, medida, color, si hay. Son preguntas sencillas, pero son muchas.</p></div>
-      <div class="mw-card"><h3 class="mw-h3">Para contestar hay que ir a ver</h3><p class="mw-p">Al anaquel, a la lista de precios o al sistema. Cada respuesta te saca de lo que estabas haciendo.</p></div>
-      <div class="mw-card"><h3 class="mw-h3">Cuando hay gente, WhatsApp espera</h3><p class="mw-p">Primero atiendes a quien está enfrente. Los mensajes se acumulan y la respuesta llega tarde.</p></div>
-      <div class="mw-card"><h3 class="mw-h3">Tu equipo repite y repite</h3><p class="mw-p">Tú y tus empleados contestan lo mismo una y otra vez, en lugar de vender o acomodar.</p></div>
-      <div class="mw-card" style="grid-column: 1 / -1;"><h3 class="mw-h3">Y algunos clientes no esperan</h3><p class="mw-p">Si no les llega la información que buscan, siguen preguntando en otro lado.</p></div>
+<!-- El problema, en una cinta -->
+<section class="mw-sec--ink" style="padding: 72px 0 0;" aria-labelledby="h-problema">
+  <div class="mw-wrap" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; padding-bottom: 40px;">
+    <h2 id="h-problema" class="mw-h2" style="max-width: 680px;">Cada mensaje es una <em class="mw-accent">oportunidad de venta.</em></h2>
+    <p class="mw-p" style="max-width: 380px;">Pero cuando el mostrador está lleno, WhatsApp espera. Y no todos los clientes esperan.</p>
+  </div>
+  <div class="mw-ticker" aria-label="Preguntas típicas de clientes">
+    <div class="mw-ticker__track">
+      <span class="mw-ticker__item">¿cuánto cuesta?</span><span class="mw-ticker__item">¿lo tienen en 27?</span><span class="mw-ticker__item">¿hay en negro?</span><span class="mw-ticker__item">¿de qué material es?</span><span class="mw-ticker__item">¿todavía tienen el que publicaron?</span><span class="mw-ticker__item">¿me lo apartas?</span><span class="mw-ticker__item">¿qué medida es?</span><span class="mw-ticker__item">¿cuál me recomiendas?</span>
+      <span class="mw-ticker__item" aria-hidden="true">¿cuánto cuesta?</span><span class="mw-ticker__item" aria-hidden="true">¿lo tienen en 27?</span><span class="mw-ticker__item" aria-hidden="true">¿hay en negro?</span><span class="mw-ticker__item" aria-hidden="true">¿de qué material es?</span><span class="mw-ticker__item" aria-hidden="true">¿todavía tienen el que publicaron?</span><span class="mw-ticker__item" aria-hidden="true">¿me lo apartas?</span><span class="mw-ticker__item" aria-hidden="true">¿qué medida es?</span><span class="mw-ticker__item" aria-hidden="true">¿cuál me recomiendas?</span>
     </div>
   </div>
+  <div style="height: 72px;"></div>
 </section>
 
-<!-- 3 · La solución -->
+<!-- La solución -->
 <section class="mw-sec" aria-labelledby="h-solucion">
   <div class="mw-wrap">
     <div class="mw-head">
-      <span class="ms-label">// La solución</span>
-      <h2 id="h-solucion" class="mw-h2">Un encargado virtual que conoce lo que vendes.</h2>
-      <p class="mw-lead">Le das a mostrador_ la información de tus productos y tu agente la usa para contestar a tus clientes por WhatsApp.</p>
+      <span class="mw-kicker">// La solución</span>
+      <h2 id="h-solucion" class="mw-h2">Un encargado virtual que <em class="mw-accent">conoce lo que vendes.</em></h2>
     </div>
-    <div class="mw-grid mw-cols-3">
-      <article class="mw-card">
-        <span class="mw-num">01</span>
+    <div class="mw-grid mw-cols-3" style="gap: 20px;">
+      <article class="mw-card mw-card--hover">
+        <span class="mw-big">01</span>
         <h3 class="mw-h3">Conoce tus productos</h3>
-        <p class="mw-p">Contesta sobre características y detalles con la información de tu inventario: material, medidas, modelo, lo que tengas registrado.</p>
-        <div class="mw-device" style="margin-top: auto;">
-          <div class="mw-device__bar"><span>Ficha del producto</span></div>
-          <dl class="mw-device__body mw-device__body--surface" style="margin: 0; display: flex; flex-direction: column; gap: 10px;">
-            <div class="ms-fact"><dt>Producto</dt><dd>Taladro percutor 1/2" 650 W</dd></div>
-            <div class="ms-fact"><dt>Características</dt><dd>para madera, metal y concreto · incluye maletín</dd></div>
-            <div class="ms-fact"><dt>SKU</dt><dd class="ms-mono">FT-650</dd></div>
-          </dl>
-        </div>
+        <p class="mw-p">Contesta sobre características con la información de tu inventario.</p>
       </article>
-      <article class="mw-card">
-        <span class="mw-num">02</span>
-        <h3 class="mw-h3">Consulta precios y disponibilidad</h3>
-        <p class="mw-p">Responde con el precio y la existencia que tiene registrados en mostrador_. Por eso conviene que tengas esos datos al día.</p>
-        <div class="mw-device" style="margin-top: auto;">
-          <div class="mw-device__bar"><span>WhatsApp</span></div>
-          <div class="mw-device__body ms-transcript mw-chat">
-            <div class="ms-msg"><div class="ms-msg__bubble">¿cuánto está y si hay?</div><span class="ms-msg__meta">16:20</span></div>
-            <div class="ms-msg ms-msg--ours ms-msg--bot"><div class="ms-msg__bubble">Está en $1,289.00 y hay 5 en tienda.</div><span class="ms-msg__meta"><b>bot</b> · 16:20</span></div>
-          </div>
-        </div>
+      <article class="mw-card mw-card--hover">
+        <span class="mw-big">02</span>
+        <h3 class="mw-h3">Dice precio y si hay</h3>
+        <p class="mw-p">Con los precios y existencias que tienes registrados.</p>
       </article>
-      <article class="mw-card">
-        <span class="mw-num">03</span>
-        <h3 class="mw-h3">Ayuda a avanzar hacia una compra</h3>
-        <p class="mw-p">Ayuda al cliente a encontrar el producto y puede registrar un apartado cuando el cliente lo autoriza y las reglas de tu negocio lo permiten.</p>
-        <div class="ms-hold" style="width: 100%; margin-top: auto;">
-          <div class="ms-hold__top"><span class="ms-hold__code">R-4K7M</span><span class="ms-mono ms-muted" style="font-size: 12px;">apartado</span></div>
-          <div class="ms-hold__item"><b>1×</b> Tenis urbanos Brisa blanco, talla 27</div>
-          <div class="ms-hold__meta">el cliente lo autorizó · según las reglas de tu tienda</div>
-        </div>
+      <article class="mw-card mw-card--hover">
+        <span class="mw-big">03</span>
+        <h3 class="mw-h3">Ayuda a cerrar</h3>
+        <p class="mw-p">Registra apartados cuando el cliente lo autoriza y tus reglas lo permiten.</p>
       </article>
-    </div>
-    <p class="mw-illus" style="margin: 16px 0 0;">Ejemplos ilustrativos · productos ficticios</p>
-  </div>
-</section>
-
-<!-- 4 · Cómo funciona -->
-<section id="como-funciona" class="mw-sec mw-sec--surface mw-anchor" aria-labelledby="h-como">
-  <div class="mw-wrap">
-    <div class="mw-head">
-      <span class="ms-label">// Cómo funciona</span>
-      <h2 id="h-como" class="mw-h2">Así funciona mostrador_.</h2>
-    </div>
-    <ol class="mw-grid mw-cols-4" style="list-style: none; margin: 0; padding: 0; gap: 32px;">
-      <li class="mw-step"><span class="mw-step__n">01</span><h3 class="mw-h3">Carga tu inventario</h3><p class="mw-p">Le das a mostrador_ la información de tus productos: nombre, características, precio y existencia.</p></li>
-      <li class="mw-step"><span class="mw-step__n">02</span><h3 class="mw-h3">Configura tu agente</h3><p class="mw-p">Con las opciones de configuración de mostrador_ defines cómo atiende a tus clientes.</p></li>
-      <li class="mw-step"><span class="mw-step__n">03</span><h3 class="mw-h3">Atiende por WhatsApp</h3><p class="mw-p">El agente contesta las preguntas sobre tus productos con la información que tiene.</p></li>
-      <li class="mw-step"><span class="mw-step__n">04</span><h3 class="mw-h3">Avanza hacia la venta</h3><p class="mw-p">Ayuda al cliente a dar con el producto y, cuando aplica y el cliente lo autoriza, registra un apartado.</p></li>
-    </ol>
-    <div class="mw-actions" style="margin-top: 48px;">
-      <a class="ms-btn ms-btn--primary mw-btn-lg" href="Demo.dc.html">Solicitar demo</a>
-      <a class="ms-link" href="ComoFunciona.dc.html">Ver el proceso completo →</a>
     </div>
   </div>
 </section>
 
-<!-- 5 · Demostración -->
-<section class="mw-sec" aria-labelledby="h-demo">
+<!-- Demostración -->
+<section id="demo" class="mw-sec mw-sec--soft mw-anchor" aria-labelledby="h-demo">
   <div class="mw-wrap">
     <div class="mw-head">
-      <span class="ms-label">// Demostración</span>
-      <h2 id="h-demo" class="mw-h2">Conoce cómo atendería a tus clientes.</h2>
-      <p class="mw-lead">Elige un giro y mira cómo el agente usa el catálogo para contestar. Son conversaciones preparadas de ejemplo: no estás hablando con el servicio real.</p>
+      <span class="mw-kicker">// Pruébalo</span>
+      <h2 id="h-demo" class="mw-h2">Así atendería a <em class="mw-accent">tus clientes.</em></h2>
+      <p class="mw-p">Elige un giro. Son conversaciones de ejemplo, no el servicio real.</p>
     </div>
     <div class="ms-seg" role="group" aria-label="Elige un ejemplo" style="flex-wrap: wrap; margin-bottom: 24px;">
       <sc-for list="{{tabs}}" as="t" hint-placeholder-count="3">
-        <button type="button" aria-pressed="{{t.pressed}}" onClick="{{t.pick}}">{{t.label}}</button>
+        <button type="button" aria-pressed="{{t.pressed}}" onClick="{{t.pick}}" style="height: 44px; padding: 0 18px; font-size: 14px;">{{t.label}}</button>
       </sc-for>
     </div>
-    <div class="mw-split mw-split--even mw-split--top" style="gap: 24px;">
+    <div class="mw-split mw-split--top" style="gap: 24px;">
       <div class="mw-device">
-        <div class="mw-device__bar"><span>A · Catálogo de {{esc.tienda}}</span><span>ficticio</span></div>
-        <div class="mw-tbl" style="border: 0;">
-          <div class="mw-tbl__head"><span>Producto</span><span>Precio</span><span>Existencia</span></div>
+        <div class="mw-device__bar"><span>Catálogo · {{esc.tienda}}</span><span>ficticio</span></div>
+        <div class="mw-tbl">
+          <div class="mw-tbl__head"><span>Producto</span><span>Precio</span><span>Hay</span></div>
           <sc-for list="{{esc.rows}}" as="r" hint-placeholder-count="3">
             <div class="{{r.cls}}">
               <div>
                 <div class="ms-table__name">{{r.n}}</div>
-                <div class="ms-table__sub"><span class="ms-mono">SKU {{r.sku}}</span> · {{r.d}}</div>
+                <div class="ms-table__sub">{{r.d}}</div>
                 <sc-if value="{{r.used}}" hint-placeholder-val="{{false}}"><div class="mw-used">bot&gt; usó estos datos</div></sc-if>
               </div>
               <div class="mw-tbl__num">{{r.p}}</div>
@@ -192,242 +134,175 @@ a{color:#1b1c1e}a:hover{color:#5c5e5d}
         </div>
       </div>
       <div class="mw-device">
-        <div class="mw-device__bar"><span>B · WhatsApp con un cliente</span><span>ilustrativo</span></div>
-        <div class="mw-device__body ms-transcript mw-chat" aria-live="polite">
-          <div class="ms-day">– hoy –</div>
-          <sc-for list="{{esc.msgs}}" as="m" hint-placeholder-count="5">
-            <sc-if value="{{m.isClient}}" hint-placeholder-val="{{true}}">
-              <div class="ms-msg"><div class="ms-msg__bubble">{{m.t}}</div><span class="ms-msg__meta">{{m.h}}</span></div>
-            </sc-if>
-            <sc-if value="{{m.isBot}}" hint-placeholder-val="{{false}}">
-              <div class="ms-msg ms-msg--ours ms-msg--bot"><div class="ms-msg__bubble">{{m.t}}</div><span class="ms-msg__meta"><b>bot</b> · {{m.h}}</span></div>
-            </sc-if>
-            <sc-if value="{{m.isEvent}}" hint-placeholder-val="{{false}}">
-              <div class="ms-day">{{m.t}}</div>
-            </sc-if>
-          </sc-for>
+        <div class="mw-device__bar"><span><b>•</b> WhatsApp</span><span>ilustrativo</span></div>
+        <div class="mw-device__body ms-transcript mw-chat" aria-live="polite" style="min-height: 360px;">
+          <sc-if value="{{show.ropa}}" hint-placeholder-val="{{true}}">
+            <sc-for list="{{esc.msgs}}" as="m" hint-placeholder-count="4">
+              <div class="{{m.cls}}"><div class="ms-msg__bubble">{{m.t}}</div><span class="ms-msg__meta">{{m.meta}}</span></div>
+            </sc-for>
+          </sc-if>
+          <sc-if value="{{show.ferre}}" hint-placeholder-val="{{false}}">
+            <sc-for list="{{esc.msgs}}" as="m" hint-placeholder-count="4">
+              <div class="{{m.cls}}"><div class="ms-msg__bubble">{{m.t}}</div><span class="ms-msg__meta">{{m.meta}}</span></div>
+            </sc-for>
+          </sc-if>
+          <sc-if value="{{show.electro}}" hint-placeholder-val="{{false}}">
+            <sc-for list="{{esc.msgs}}" as="m" hint-placeholder-count="4">
+              <div class="{{m.cls}}"><div class="ms-msg__bubble">{{m.t}}</div><span class="ms-msg__meta">{{m.meta}}</span></div>
+            </sc-for>
+          </sc-if>
         </div>
       </div>
     </div>
-    <p class="mw-small" style="margin-top: 16px;">{{esc.nota}}</p>
-    <div class="mw-actions" style="margin-top: 32px;">
-      <a class="ms-btn ms-btn--primary mw-btn-lg" href="Demo.dc.html">Ver una demo</a>
+    <div class="mw-actions" style="margin-top: 32px; justify-content: space-between;">
+      <p class="mw-small" style="color: var(--ink);">{{esc.nota}}</p>
+      <a class="ms-btn mw-cta mw-btn-lg" href="Demo.dc.html">Ver una demo</a>
     </div>
   </div>
 </section>
 
-<!-- 6 · Inventario -->
-<section class="mw-sec mw-sec--surface" aria-labelledby="h-inv">
-  <div class="mw-wrap mw-split">
-    <div class="mw-stack">
-      <span class="ms-label">// Tu inventario</span>
-      <h2 id="h-inv" class="mw-h2">Tus productos son la base de cada respuesta.</h2>
-      <p class="mw-lead">Tú das la información y el agente contesta con ella. Si un dato no está en tu catálogo, el agente no lo inventa.</p>
-      <ul class="mw-flow">
-        <li><span class="mw-flow__n">¹</span><div><h3 class="mw-h3" style="font-size: 17px;">Lo que cargas es lo que contesta</h3><p class="mw-p">Nombre, características, precio y existencia: el agente responde con eso.</p></div></li>
-        <li><span class="mw-flow__n">²</span><div><h3 class="mw-h3" style="font-size: 17px;">Fichas completas, respuestas completas</h3><p class="mw-p">Mientras más detalle tenga cada producto, más preguntas puede contestar.</p></div></li>
-        <li><span class="mw-flow__n">³</span><div><h3 class="mw-h3" style="font-size: 17px;">Datos al día</h3><p class="mw-p">El precio y la existencia que contesta son los que tiene mostrador_. Mantenerlos al día es lo que hace que la respuesta sea correcta.</p></div></li>
-      </ul>
-    </div>
-    <div class="mw-stack-sm">
-      <div class="mw-device">
-        <div class="mw-device__bar"><span>Ficha · Audífonos inalámbricos Pulso</span><span class="ms-mono">AP-310</span></div>
-        <dl class="mw-device__body mw-device__body--surface mw-grid mw-cols-2" style="margin: 0; gap: 14px 24px;">
-          <div class="ms-fact"><dt>Conexión ¹</dt><dd>Bluetooth 5.3</dd></div>
-          <div class="ms-fact"><dt>Batería ¹</dt><dd>hasta 30 h</dd></div>
-          <div class="ms-fact"><dt>Colores ²</dt><dd>negro, blanco</dd></div>
-          <div class="ms-fact"><dt>Incluye ²</dt><dd>estuche de carga y cable USB-C</dd></div>
-          <div class="ms-fact"><dt>Precio ³</dt><dd class="ms-mono" style="font-weight: 700;">$899.00</dd></div>
-          <div class="ms-fact"><dt>Existencia ³</dt><dd class="ms-mono" style="font-weight: 700;">4</dd></div>
-        </dl>
-      </div>
-      <div class="mw-hero-vis__link" aria-hidden="true" style="padding-left: 0;">↓ el agente arma la respuesta con esos datos</div>
-      <div class="mw-device">
-        <div class="mw-device__bar"><span>WhatsApp</span></div>
-        <div class="mw-device__body ms-transcript mw-chat">
-          <div class="ms-msg"><div class="ms-msg__bubble">¿los Pulso cuánto duran de pila y en qué colores hay?</div><span class="ms-msg__meta">13:15</span></div>
-          <div class="ms-msg ms-msg--ours ms-msg--bot"><div class="ms-msg__bubble">Duran hasta 30 h ¹ y vienen en negro o blanco ². Traen estuche de carga ². Están en $899.00 y hay 4 ³.</div><span class="ms-msg__meta"><b>bot</b> · 13:15</span></div>
-        </div>
-      </div>
-      <span class="mw-illus">Ejemplo ilustrativo · producto ficticio</span>
-    </div>
-  </div>
-</section>
-
-<!-- 7 · Apartados -->
-<section class="mw-sec" aria-labelledby="h-apartado">
-  <div class="mw-wrap mw-split mw-split--top">
-    <div class="mw-stack">
-      <span class="ms-label">// Apartados</span>
-      <h2 id="h-apartado" class="mw-h2">Del interés al apartado.</h2>
-      <p class="mw-lead">Cuando un cliente quiere asegurar un producto, el agente puede registrar el apartado. Solo lo hace si el cliente lo autoriza y si se cumplen las reglas de tu negocio.</p>
-      <ol class="mw-flow">
-        <li><span class="mw-flow__n">01</span><p class="mw-p"><strong>El cliente pregunta</strong> por un producto.</p></li>
-        <li><span class="mw-flow__n">02</span><p class="mw-p"><strong>El agente le da la información</strong>: características, precio y existencia.</p></li>
-        <li><span class="mw-flow__n">03</span><p class="mw-p"><strong>El cliente quiere apartarlo</strong> y lo dice.</p></li>
-        <li><span class="mw-flow__n">04</span><p class="mw-p"><strong>El agente lo registra</strong> solo con la autorización del cliente y si las reglas de tu negocio lo permiten.</p></li>
-        <li><span class="mw-flow__n">05</span><p class="mw-p"><strong>Le dice al cliente cómo quedó</strong>: registrado, o por qué no se pudo.</p></li>
-      </ol>
-      <div class="mw-card mw-card--canvas">
-        <span class="ms-label ms-label--plain">// Cuando no se registra</span>
-        <p class="mw-p">Si el producto no se puede apartar, si no hay existencia o si el cliente no lo autoriza, el agente no registra nada y se lo explica al cliente. No todos los productos tienen que poder apartarse: depende de cómo trabaje tu negocio.</p>
-      </div>
-    </div>
-    <div class="mw-device">
-      <div class="mw-device__bar"><span>WhatsApp · Zapatería de ejemplo</span><span>ilustrativo</span></div>
-      <div class="mw-device__body ms-transcript mw-chat">
-        <div class="ms-day">– hoy –</div>
-        <div class="ms-msg"><div class="ms-msg__bubble">¿me apartas los Brisa blancos en 27? paso en la tarde</div><span class="ms-msg__meta">11:03</span></div>
-        <div class="ms-msg ms-msg--ours ms-msg--bot"><div class="ms-msg__bubble">Puedo registrar el apartado de 1 par de Brisa blanco, talla 27, a tu nombre. ¿Lo registro?</div><span class="ms-msg__meta"><b>bot</b> · 11:03</span></div>
-        <div class="ms-msg"><div class="ms-msg__bubble">sí, a nombre de Karla</div><span class="ms-msg__meta">11:04</span></div>
-        <div class="ms-day">– el cliente autorizó el apartado –</div>
-        <div class="ms-msg ms-msg--ours ms-msg--bot"><div class="ms-msg__bubble">Quedó registrado. Tu código es R-4K7M. Lo guardamos hasta las 19:00 de hoy, según las reglas de la tienda.</div><span class="ms-msg__meta"><b>bot</b> · 11:04</span></div>
-        <div class="ms-hold" style="width: 100%; margin-top: 8px;">
-          <div class="ms-hold__top"><span class="ms-hold__code">R-4K7M</span><span class="ms-mono ms-muted" style="font-size: 12px;">registrado</span></div>
-          <div class="ms-hold__item"><b>1×</b> Tenis urbanos Brisa blanco, talla 27</div>
-          <div class="ms-hold__meta">Karla · vence 19:00</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 8 · Casos de uso -->
-<section class="mw-sec mw-sec--surface" aria-labelledby="h-casos">
+<!-- Cómo funciona -->
+<section id="como-funciona" class="mw-sec mw-sec--ink mw-anchor" aria-labelledby="h-como">
   <div class="mw-wrap">
     <div class="mw-head">
-      <span class="ms-label">// Para tu negocio</span>
-      <h2 id="h-casos" class="mw-h2">Para negocios que venden todos los días.</h2>
-      <p class="mw-lead">Si vendes productos físicos, llevas un inventario y tus clientes te escriben por WhatsApp, esto es lo que te preguntan.</p>
+      <span class="mw-kicker">// Cómo funciona</span>
+      <h2 id="h-como" class="mw-h2">Cuatro pasos. <em class="mw-accent">Cero código.</em></h2>
     </div>
-    <div class="mw-grid mw-cols-3">
-      <article class="mw-card"><span class="ms-label ms-label--plain">// Ropa y calzado</span><div class="ms-transcript mw-chat"><div class="ms-msg"><div class="ms-msg__bubble">¿la chamarra azul la tienes en mediana?</div></div></div><p class="mw-small">Tallas, colores, materiales, precio y existencia.</p></article>
-      <article class="mw-card"><span class="ms-label ms-label--plain">// Refaccionarias</span><div class="ms-transcript mw-chat"><div class="ms-msg"><div class="ms-msg__bubble">¿tienen la balata con clave BD-1180?</div></div></div><p class="mw-small">Claves, características, precio y existencia. La compatibilidad con un vehículo solo si está en tu catálogo.</p></article>
-      <article class="mw-card"><span class="ms-label ms-label--plain">// Ferreterías</span><div class="ms-transcript mw-chat"><div class="ms-msg"><div class="ms-msg__bubble">¿qué medidas de tubo PVC manejan?</div></div></div><p class="mw-small">Especificaciones, opciones disponibles, precio y existencia.</p></article>
-      <article class="mw-card"><span class="ms-label ms-label--plain">// Electrónica</span><div class="ms-transcript mw-chat"><div class="ms-msg"><div class="ms-msg__bubble">¿qué diferencia hay entre los dos modelos de bocina?</div></div></div><p class="mw-small">Características técnicas, modelos y precios.</p></article>
-      <article class="mw-card"><span class="ms-label ms-label--plain">// Distribuidores</span><div class="ms-transcript mw-chat"><div class="ms-msg"><div class="ms-msg__bubble">¿cuántas piezas trae la caja del aceite de 1 L?</div></div></div><p class="mw-small">Información del catálogo, presentaciones y existencia.</p></article>
-      <article class="mw-card mw-card--canvas" style="justify-content: space-between;"><h3 class="mw-h3">¿Tu giro es otro?</h3><p class="mw-p">Si vendes productos con inventario, mira ejemplos completos con la pregunta, los datos que se usan y la respuesta.</p><a class="ms-link" href="CasosDeUso.dc.html">Ver casos de uso →</a></article>
+    <ol class="mw-grid mw-cols-4" style="list-style: none; margin: 0; padding: 0; gap: 32px;">
+      <li class="mw-step"><span class="mw-big">01</span><h3 class="mw-h3">Carga tu inventario</h3><p class="mw-p">Productos, precios y existencias.</p></li>
+      <li class="mw-step"><span class="mw-big">02</span><h3 class="mw-h3">Configura tu agente</h3><p class="mw-p">Define cómo atiende a tus clientes.</p></li>
+      <li class="mw-step"><span class="mw-big">03</span><h3 class="mw-h3">Atiende por WhatsApp</h3><p class="mw-p">Contesta con tu información.</p></li>
+      <li class="mw-step"><span class="mw-big">04</span><h3 class="mw-h3">Avanza a la venta</h3><p class="mw-p">Y registra apartados autorizados.</p></li>
+    </ol>
+    <div class="mw-actions" style="margin-top: 56px;">
+      <a class="ms-btn mw-cta mw-btn-lg" href="Demo.dc.html">Solicitar demo</a>
+      <a class="mw-more" href="ComoFunciona.dc.html">Ver el proceso →</a>
     </div>
   </div>
 </section>
 
-<!-- 9 · Confianza -->
-<section class="mw-sec" aria-labelledby="h-confianza">
-  <div class="mw-wrap mw-split mw-split--top">
+<!-- Apartados -->
+<section class="mw-sec" aria-labelledby="h-apartado">
+  <div class="mw-wrap mw-split">
     <div class="mw-stack">
-      <span class="ms-label">// Confianza</span>
-      <h2 id="h-confianza" class="mw-h2">Un agente que responde con la información de tu negocio.</h2>
-      <p class="mw-lead">Dejar que un agente atienda a tus clientes pide confianza. Estas son las reglas con las que contesta.</p>
-      <div class="mw-device">
-        <div class="mw-device__bar"><span>Cuando falta un dato</span><span>ilustrativo</span></div>
-        <div class="mw-device__body ms-transcript mw-chat">
-          <div class="ms-msg"><div class="ms-msg__bubble">¿los Pulso Sport sirven para nadar?</div><span class="ms-msg__meta">17:40</span></div>
-          <div class="ms-msg ms-msg--ours ms-msg--bot"><div class="ms-msg__bubble">La ficha dice que son resistentes al sudor, pero no dice nada de usarlos en el agua, así que no te lo puedo asegurar.</div><span class="ms-msg__meta"><b>bot</b> · 17:40</span></div>
-        </div>
-      </div>
+      <span class="mw-kicker">// Apartados</span>
+      <h2 id="h-apartado" class="mw-h2">Del interés <em class="mw-accent">al apartado.</em></h2>
+      <p class="mw-lead">Solo con la autorización del cliente y según tus reglas. Si no se puede, el agente lo dice.</p>
+      <ol class="mw-chain" aria-label="Pasos de un apartado">
+        <li><span>pregunta</span></li>
+        <li><span>info</span></li>
+        <li><span>“apártamelo”</span></li>
+        <li class="is-key"><span>autoriza</span></li>
+        <li><span>registrado</span></li>
+      </ol>
     </div>
-    <div class="mw-rules">
-      <div class="mw-rule"><span class="mw-rule__k">// Sus datos</span><p class="mw-p">Usa la información de tu negocio y de tus productos que tiene disponible.</p></div>
-      <div class="mw-rule"><span class="mw-rule__k">// Si falta algo</span><p class="mw-p">No inventa. Si un dato no está, se lo dice al cliente.</p></div>
-      <div class="mw-rule"><span class="mw-rule__k">// Precios y existencia</span><p class="mw-p">Los contesta tal como están en los datos que tiene, sin redondear ni suponer.</p></div>
-      <div class="mw-rule"><span class="mw-rule__k">// Apartados</span><p class="mw-p">Solo con la autorización del cliente y según las reglas de tu negocio.</p></div>
-      <div class="mw-rule"><span class="mw-rule__k">// Fuera de su alcance</span><p class="mw-p">Si le preguntan algo que no sabe, lo dice con claridad en lugar de improvisar una respuesta.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- 10 · Preguntas frecuentes -->
-<section class="mw-sec mw-sec--surface" aria-labelledby="h-faq">
-  <div class="mw-wrap mw-split mw-split--top">
-    <div class="mw-stack">
-      <span class="ms-label">// Preguntas frecuentes</span>
-      <h2 id="h-faq" class="mw-h2">Lo que más nos preguntan.</h2>
-      <a class="ms-link" href="PreguntasFrecuentes.dc.html">Ver todas las preguntas →</a>
-    </div>
-    <div class="mw-faq">
-      <details open="open"><summary>¿Qué es mostrador_?</summary><div class="mw-faq__a"><p>Un servicio que crea un agente de IA para atender a tus clientes por WhatsApp. El agente contesta preguntas sobre tus productos con la información de tu inventario.</p></div></details>
-      <details><summary>¿Cómo funciona el agente de IA?</summary><div class="mw-faq__a"><p>Lee lo que pregunta el cliente, busca en la información de productos que le diste y contesta con lo que encuentra: características, precio y existencia.</p></div></details>
-      <details><summary>¿Cómo se proporciona el inventario?</summary><div class="mw-faq__a"><p>Cargas la información de tus productos en mostrador_. En la demo te mostramos las formas de carga disponibles para tu negocio.</p></div></details>
-      <details><summary>¿Qué información puede responder sobre mis productos?</summary><div class="mw-faq__a"><p>La que tengas en tu catálogo: nombre, descripción, características, precio y existencia. Lo que no esté registrado, no lo contesta como si lo supiera.</p></div></details>
-      <details><summary>¿Cómo consulta precios y disponibilidad?</summary><div class="mw-faq__a"><p>Con los datos de precio y existencia que tiene mostrador_ al momento de la conversación. Por eso es importante mantenerlos al día.</p></div></details>
-      <details><summary>¿Puede ayudar a registrar apartados?</summary><div class="mw-faq__a"><p>Sí, cuando el cliente lo autoriza y se cumplen las reglas de tu negocio. Si no se cumplen, no registra el apartado y le explica al cliente por qué.</p></div></details>
-      <details><summary>¿Qué pasa si falta información sobre un producto?</summary><div class="mw-faq__a"><p>El agente no la inventa. Le dice al cliente que no tiene ese dato.</p></div></details>
-      <details><summary>¿Necesito conocimientos técnicos para usarlo?</summary><div class="mw-faq__a"><p>No necesitas programar. mostrador_ está pensado para dueños y encargados de negocio. En la demo ves cómo es el proceso.</p></div></details>
-      <details><summary>¿Cómo puedo conocer el producto antes de contratarlo?</summary><div class="mw-faq__a"><p>Solicita una demo y te mostramos cómo atendería a tus clientes. <a class="ms-link" href="Demo.dc.html">Solicitar demo →</a></p></div></details>
+    <div class="ms-hold" style="width: 100%; border: 1px solid var(--ink); box-shadow: 10px 10px 0 var(--signal); padding: 32px;">
+      <div class="ms-hold__top"><span class="ms-hold__code" style="font-size: 56px; line-height: 60px;">R-4K7M</span><span class="ms-badge">registrado</span></div>
+      <div class="ms-hold__item" style="font-size: 16px; margin-top: 8px;"><b>1×</b> Tenis Brisa blanco, talla 27</div>
+      <div class="ms-hold__meta">Karla · autorizado por el cliente · según las reglas de la tienda</div>
+      <span class="mw-illus" style="margin-top: 12px;">ejemplo ilustrativo</span>
     </div>
   </div>
 </section>
 
-<!-- 11 · Cierre -->
-<section class="mw-sec" aria-labelledby="h-cierre">
+<!-- Para tu negocio -->
+<section class="mw-sec mw-sec--line" aria-labelledby="h-casos">
   <div class="mw-wrap">
-    <div class="mw-card" style="padding: 56px 48px; gap: 24px; align-items: flex-start; border-color: var(--ink);">
-      <span class="ms-label ms-label--plain">// Siguiente paso</span>
-      <h2 id="h-cierre" class="mw-h2" style="max-width: 820px;">Dale a tus clientes otra forma de encontrar lo que buscan.</h2>
-      <p class="mw-lead">Conoce cómo mostrador_ puede ayudarte a atender las preguntas de tus clientes y usar mejor la información de tu inventario.</p>
+    <div class="mw-head">
+      <span class="mw-kicker">// Para tu negocio</span>
+      <h2 id="h-casos" class="mw-h2">Para negocios que venden <em class="mw-accent">todos los días.</em></h2>
+    </div>
+    <div class="mw-grid mw-cols-5" style="gap: 12px;">
+      <a class="mw-biz" href="CasosDeUso.dc.html" style="text-decoration: none; color: var(--ink);"><span class="mw-kicker">Ropa y calzado</span><span class="mw-biz__q">¿la tienes en mediana?</span></a>
+      <a class="mw-biz" href="CasosDeUso.dc.html" style="text-decoration: none; color: var(--ink);"><span class="mw-kicker">Refaccionarias</span><span class="mw-biz__q">¿tienen la balata BD-1180?</span></a>
+      <a class="mw-biz" href="CasosDeUso.dc.html" style="text-decoration: none; color: var(--ink);"><span class="mw-kicker">Ferreterías</span><span class="mw-biz__q">¿qué medidas de tubo manejan?</span></a>
+      <a class="mw-biz" href="CasosDeUso.dc.html" style="text-decoration: none; color: var(--ink);"><span class="mw-kicker">Electrónica</span><span class="mw-biz__q">¿qué diferencia hay entre los dos?</span></a>
+      <a class="mw-biz" href="CasosDeUso.dc.html" style="text-decoration: none; color: var(--ink);"><span class="mw-kicker">Distribuidores</span><span class="mw-biz__q">¿cuántas piezas trae la caja?</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- Confianza -->
+<section class="mw-sec mw-sec--line" aria-labelledby="h-confianza">
+  <div class="mw-wrap">
+    <div class="mw-head">
+      <span class="mw-kicker">// Confianza</span>
+      <h2 id="h-confianza" class="mw-h2">Responde con <em class="mw-accent">la información de tu negocio.</em></h2>
+    </div>
+    <div class="mw-grid mw-cols-4" style="gap: 32px;">
+      <div class="mw-rule"><span class="mw-rule__k">No inventa</span><p class="mw-p">Si falta un dato, lo dice.</p></div>
+      <div class="mw-rule"><span class="mw-rule__k">Precios exactos</span><p class="mw-p">Tal como los tienes registrados.</p></div>
+      <div class="mw-rule"><span class="mw-rule__k">Aparta con permiso</span><p class="mw-p">Solo si el cliente autoriza y tus reglas lo permiten.</p></div>
+      <div class="mw-rule"><span class="mw-rule__k">Claro cuando no sabe</span><p class="mw-p">No improvisa fuera de lo que conoce.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Cierre -->
+<section class="mw-sec mw-sec--red" aria-labelledby="h-cierre">
+  <div class="mw-wrap mw-split">
+    <h2 id="h-cierre" class="mw-h2">Dale a tus clientes otra forma de encontrar lo que buscan<span class="mw-cursor" style="color: var(--ink);" aria-hidden="true">_</span></h2>
+    <div class="mw-stack" style="align-items: flex-start;">
+      <p class="mw-lead">Te mostramos cómo funcionaría con productos como los tuyos.</p>
       <div class="mw-actions">
-        <a class="ms-btn ms-btn--primary mw-btn-lg" href="Demo.dc.html">Solicitar demo</a>
-        <a class="ms-link" href="ComoFunciona.dc.html">Conocer cómo funciona →</a>
+        <a class="ms-btn mw-cta mw-cta--ink mw-btn-lg" href="Demo.dc.html">Solicitar demo</a>
+        <a class="ms-btn mw-ghost mw-btn-lg" href="ComoFunciona.dc.html">Conocer cómo funciona</a>
       </div>
     </div>
   </div>
 </section>
 
 </main>
-<dc-import name="Footer" hint-size="100%,380px"></dc-import>
+<dc-import name="Footer" hint-size="100%,220px"></dc-import>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":9400}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":5600}}'>
 class Component extends DCLogic {
   renderVals() {
     const ESC = {
       ropa: {
         label: 'Ropa y calzado', tienda: 'Zapatería de ejemplo',
-        nota: 'El agente contesta con la talla, el precio y la existencia del catálogo. El apartado se registra solo si el cliente lo autoriza y la tienda lo permite.',
+        nota: 'Contesta talla, precio y existencia del catálogo.',
         rows: [
-          { n: 'Tenis urbanos Brisa blanco', sku: 'TB-2701', d: 'piel sintética · suela de hule · tallas 25 a 28', p: '$1,149.00', s: '3', sn: 'talla 27', used: true },
-          { n: 'Tenis urbanos Brisa negro', sku: 'TB-2702', d: 'piel sintética · suela de hule · tallas 25 a 28', p: '$1,149.00', s: '0', sn: 'talla 27', used: true },
-          { n: 'Sandalia Marea café', sku: 'SM-1104', d: 'piel · tallas 23 a 26', p: '$649.00', s: '8', sn: 'total', used: false },
+          { n: 'Tenis Brisa blanco', d: 'piel sintética · tallas 25 a 28', p: '$1,149.00', s: '3', sn: 'talla 27', used: true },
+          { n: 'Tenis Brisa negro', d: 'piel sintética · tallas 25 a 28', p: '$1,149.00', s: '0', sn: 'talla 27', used: true },
+          { n: 'Sandalia Marea café', d: 'piel · tallas 23 a 26', p: '$649.00', s: '8', sn: 'total', used: false },
         ],
         msgs: [
-          { k: 'c', t: 'hola, ¿tienen los tenis Brisa en 27?', h: '11:02' },
-          { k: 'b', t: 'Sí. En blanco hay 3 pares en talla 27, están en $1,149.00. En negro ya no hay en 27.', h: '11:02' },
+          { k: 'c', t: '¿tienen los Brisa en 27?', h: '11:02' },
+          { k: 'b', t: 'En blanco sí, hay 3 pares. Están en $1,149.00. En negro ya no hay en 27.', h: '11:02' },
           { k: 'c', t: '¿de qué material son?', h: '11:03' },
-          { k: 'b', t: 'Son de piel sintética con suela de hule. ¿Quieres que registre un apartado de los blancos?', h: '11:03' },
-          { k: 'c', t: 'sí, a nombre de Karla', h: '11:04' },
-          { k: 'e', t: '– el cliente autorizó el apartado –' },
-          { k: 'b', t: 'Quedó registrado. Tu código es R-4K7M, lo guardamos hasta las 19:00 de hoy.', h: '11:04' },
+          { k: 'b', t: 'Piel sintética con suela de hule.', h: '11:03' },
         ],
       },
       ferre: {
         label: 'Ferretería', tienda: 'Ferretería de ejemplo',
-        nota: 'El agente recomienda con lo que dice cada ficha. Si la ficha no menciona algo, no lo supone.',
+        nota: 'Recomienda con lo que dice cada ficha.',
         rows: [
-          { n: 'Taladro percutor 1/2" 650 W', sku: 'FT-650', d: 'madera, metal y concreto · incluye maletín', p: '$1,289.00', s: '5', sn: 'en tienda', used: true },
-          { n: 'Juego de brocas para concreto', sku: 'BC-005', d: '5 piezas · 5 a 10 mm', p: '$189.00', s: '12', sn: 'en tienda', used: true },
-          { n: 'Taladro inalámbrico 20 V', sku: 'FT-20V', d: 'se vende sin batería ni cargador', p: '$1,890.00', s: '2', sn: 'en tienda', used: true },
+          { n: 'Taladro percutor 1/2" 650 W', d: 'madera, metal y concreto', p: '$1,289.00', s: '5', sn: 'en tienda', used: true },
+          { n: 'Brocas para concreto', d: 'juego de 5', p: '$189.00', s: '12', sn: 'en tienda', used: true },
+          { n: 'Taladro inalámbrico 20 V', d: 'sin batería ni cargador', p: '$1,890.00', s: '2', sn: 'en tienda', used: false },
         ],
         msgs: [
-          { k: 'c', t: 'buenas, ¿tienen un taladro que sirva para concreto?', h: '16:18' },
-          { k: 'b', t: 'Sí. El taladro percutor de 1/2" y 650 W sirve para concreto e incluye maletín. Está en $1,289.00 y hay 5.', h: '16:18' },
-          { k: 'b', t: 'Para concreto vas a necesitar brocas para concreto. El juego de 5 está en $189.00.', h: '16:18' },
-          { k: 'c', t: '¿y el inalámbrico trae batería?', h: '16:20' },
-          { k: 'b', t: 'No. El inalámbrico de 20 V se vende sin batería ni cargador. Está en $1,890.00 y quedan 2.', h: '16:20' },
+          { k: 'c', t: '¿tienen taladro para concreto?', h: '16:18' },
+          { k: 'b', t: 'El percutor de 1/2" y 650 W sirve para concreto. Está en $1,289.00 y hay 5.', h: '16:18' },
+          { k: 'c', t: '¿y brocas?', h: '16:19' },
+          { k: 'b', t: 'El juego de 5 brocas para concreto está en $189.00. Hay 12.', h: '16:19' },
         ],
       },
       electro: {
-        label: 'Electrónica', tienda: 'Tienda de electrónica de ejemplo',
-        nota: 'Cuando el catálogo no tiene el dato, el agente lo dice en lugar de inventarlo.',
+        label: 'Electrónica', tienda: 'Electrónica de ejemplo',
+        nota: 'Si el catálogo no tiene el dato, lo dice.',
         rows: [
-          { n: 'Audífonos inalámbricos Pulso', sku: 'AP-310', d: 'Bluetooth 5.3 · hasta 30 h de batería', p: '$899.00', s: '4', sn: 'en tienda', used: true },
-          { n: 'Audífonos Pulso Sport', sku: 'AP-320', d: 'gancho de oreja · resistentes al sudor', p: '$1,099.00', s: '0', sn: 'en tienda', used: true },
-          { n: 'Cargador USB-C 20 W', sku: 'CG-020', d: 'un puerto · cable no incluido', p: '$299.00', s: '9', sn: 'en tienda', used: false },
+          { n: 'Audífonos Pulso', d: 'Bluetooth 5.3 · hasta 30 h', p: '$899.00', s: '4', sn: 'en tienda', used: true },
+          { n: 'Audífonos Pulso Sport', d: 'resistentes al sudor', p: '$1,099.00', s: '0', sn: 'en tienda', used: true },
+          { n: 'Cargador USB-C 20 W', d: 'un puerto', p: '$299.00', s: '9', sn: 'en tienda', used: false },
         ],
         msgs: [
           { k: 'c', t: '¿los Pulso Sport sirven para nadar?', h: '17:40' },
-          { k: 'b', t: 'La ficha dice que son resistentes al sudor, pero no dice nada de usarlos en el agua, así que no te lo puedo asegurar. Además, ahorita no hay en existencia.', h: '17:40' },
-          { k: 'c', t: 'ah ok, ¿y los Pulso normales cuánto dura la pila?', h: '17:42' },
-          { k: 'b', t: 'Hasta 30 h, según la ficha. Están en $899.00 y hay 4.', h: '17:42' },
+          { k: 'b', t: 'La ficha dice resistentes al sudor, nada de agua. No te lo puedo asegurar.', h: '17:40' },
+          { k: 'c', t: '¿y los Pulso normales?', h: '17:41' },
+          { k: 'b', t: 'Hasta 30 h de batería, en $899.00. Hay 4.', h: '17:41' },
         ],
       },
     };
@@ -437,14 +312,19 @@ class Component extends DCLogic {
       tienda: cur.tienda,
       nota: cur.nota,
       rows: cur.rows.map((r) => ({ ...r, cls: r.used ? 'mw-tbl__row mw-tbl__row--used' : 'mw-tbl__row' })),
-      msgs: cur.msgs.map((m) => ({ ...m, isClient: m.k === 'c', isBot: m.k === 'b', isEvent: m.k === 'e' })),
+      msgs: cur.msgs.map((m, i) => ({
+        t: m.t,
+        meta: m.k === 'b' ? 'bot · ' + m.h : m.h,
+        cls: (m.k === 'b' ? 'ms-msg ms-msg--ours ms-msg--bot' : 'ms-msg') + ' mw-pop mw-d' + (i + 1),
+      })),
     };
+    const show = { ropa: sel === 'ropa', ferre: sel === 'ferre', electro: sel === 'electro' };
     const tabs = Object.keys(ESC).map((k) => ({
       label: ESC[k].label,
       pressed: k === sel ? 'true' : 'false',
       pick: () => this.setState({ esc: k }),
     }));
-    return { esc, tabs };
+    return { esc, tabs, show };
   }
 }
 </script>
