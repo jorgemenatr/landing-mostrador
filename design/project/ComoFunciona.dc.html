@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Cómo funciona — mostrador_</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="ds/mostrador/components/bundle.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:#1b1c1e}a:hover{color:#5c5e5d}
+</style>
+</helmet>
+<div class="mw-page" style="font-family: var(--font-sans); color: var(--ink); background: var(--canvas);">
+<dc-import name="Nav" current="como" hint-size="100%,72px"></dc-import>
+<main>
+
+<section class="mw-hero" aria-labelledby="h-top">
+  <div class="mw-wrap">
+    <div class="mw-head" style="margin-bottom: 40px;">
+      <span class="ms-label ms-label--plain">// Cómo funciona</span>
+      <h1 id="h-top" class="mw-h1">De tu inventario a una conversación por WhatsApp.</h1>
+      <p class="mw-lead">mostrador_ conecta tres cosas: la información de tus productos, un agente de IA que la consulta y la conversación con tu cliente. Así es el proceso, paso por paso.</p>
+    </div>
+    <nav aria-label="Pasos" class="mw-grid mw-cols-4" style="gap: 12px;">
+      <a class="mw-card" href="#paso-1" style="text-decoration: none; color: var(--ink);"><span class="mw-num">01</span><span class="mw-h3" style="font-size: 17px;">Carga tu inventario</span></a>
+      <a class="mw-card" href="#paso-2" style="text-decoration: none; color: var(--ink);"><span class="mw-num">02</span><span class="mw-h3" style="font-size: 17px;">Configura tu agente</span></a>
+      <a class="mw-card" href="#paso-3" style="text-decoration: none; color: var(--ink);"><span class="mw-num">03</span><span class="mw-h3" style="font-size: 17px;">Atiende por WhatsApp</span></a>
+      <a class="mw-card" href="#paso-4" style="text-decoration: none; color: var(--ink);"><span class="mw-num">04</span><span class="mw-h3" style="font-size: 17px;">Avanza hacia la venta</span></a>
+    </nav>
+  </div>
+</section>
+
+<!-- Paso 1 -->
+<section id="paso-1" class="mw-sec mw-sec--surface mw-anchor" aria-labelledby="h-p1">
+  <div class="mw-wrap mw-split">
+    <div class="mw-stack">
+      <span class="ms-label">// Paso 01</span>
+      <h2 id="h-p1" class="mw-h2">Carga tu inventario.</h2>
+      <p class="mw-lead">Le das a mostrador_ la información de tus productos. Es lo que el agente va a usar para contestar.</p>
+      <ul class="mw-flow">
+        <li><span class="mw-flow__n">·</span><p class="mw-p"><strong>Nombre e identificador</strong>, como el SKU o la clave que usas en tu tienda.</p></li>
+        <li><span class="mw-flow__n">·</span><p class="mw-p"><strong>Características</strong>: medidas, material, tallas, colores, modelo, lo que tus clientes preguntan.</p></li>
+        <li><span class="mw-flow__n">·</span><p class="mw-p"><strong>Precio y existencia</strong>, para que el agente conteste cuánto cuesta y si hay.</p></li>
+      </ul>
+      <p class="mw-small">Las formas de carga disponibles te las mostramos en la demo.</p>
+    </div>
+    <div class="mw-stack-sm">
+      <div class="mw-device">
+        <div class="mw-device__bar"><span>Catálogo · Ferretería de ejemplo</span><span>4 productos</span></div>
+        <div class="mw-scroll">
+        <table class="ms-table" style="border: 0; min-width: 520px;">
+          <thead><tr><th>Producto</th><th style="text-align: right;">Precio</th><th style="text-align: right;">Existencia</th></tr></thead>
+          <tbody>
+            <tr><td><div class="ms-table__name">Taladro percutor 1/2" 650 W</div><div class="ms-table__sub"><span class="ms-mono">SKU FT-650</span> · madera, metal y concreto · incluye maletín</div></td><td class="num">$1,289.00</td><td class="num">5</td></tr>
+            <tr><td><div class="ms-table__name">Juego de brocas para concreto</div><div class="ms-table__sub"><span class="ms-mono">SKU BC-005</span> · 5 piezas · 5 a 10 mm</div></td><td class="num">$189.00</td><td class="num">12</td></tr>
+            <tr><td><div class="ms-table__name">Taladro inalámbrico 20 V</div><div class="ms-table__sub"><span class="ms-mono">SKU FT-20V</span> · se vende sin batería ni cargador</div></td><td class="num">$1,890.00</td><td class="num">2</td></tr>
+            <tr><td><div class="ms-table__name">Tubo PVC hidráulico 1/2"</div><div class="ms-table__sub"><span class="ms-mono">SKU PV-012</span> · <span class="ms-signal">sin características: el agente no lo sabe describir</span></div></td><td class="num">$78.00<small>tramo 6 m</small></td><td class="num">40</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+      <span class="mw-illus">Ejemplo ilustrativo · productos ficticios</span>
+      <p class="mw-small">Un producto sin características se puede encontrar por nombre, pero el agente no puede contestar detalles que no están en su ficha.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Paso 2 -->
+<section id="paso-2" class="mw-sec mw-anchor" aria-labelledby="h-p2">
+  <div class="mw-wrap mw-split">
+    <div class="mw-stack">
+      <span class="ms-label">// Paso 02</span>
+      <h2 id="h-p2" class="mw-h2">Configura tu agente.</h2>
+      <p class="mw-lead">Con las opciones de configuración de mostrador_ defines cómo atiende tu agente: los datos de tu negocio y las reglas con las que trabaja, como las de apartados.</p>
+      <p class="mw-small">En la demo te enseñamos las opciones de configuración disponibles y cómo se ajustan a tu negocio.</p>
+    </div>
+    <div class="mw-stack-sm">
+      <div class="mw-device">
+        <div class="mw-device__bar"><span>Tu agente</span><span>ejemplo</span></div>
+        <div class="ms-settings" style="border: 0;">
+          <div class="ms-setting"><span class="ms-label ms-label--plain">Negocio</span><span class="ms-setting__value" style="font-family: var(--font-sans); font-weight: 600;">Ferretería de ejemplo</span><span></span></div>
+          <div class="ms-setting"><span class="ms-label ms-label--plain">Catálogo</span><span class="ms-setting__value">214 productos</span><span></span></div>
+          <div class="ms-setting"><span class="ms-label ms-label--plain">Apartados</span><span class="ms-setting__value ms-setting__value--off">según las reglas de tu negocio</span><span></span></div>
+        </div>
+      </div>
+      <span class="mw-illus">Vista ilustrativa · las opciones reales se muestran en la demo</span>
+    </div>
+  </div>
+</section>
+
+<!-- Paso 3 -->
+<section id="paso-3" class="mw-sec mw-sec--surface mw-anchor" aria-labelledby="h-p3">
+  <div class="mw-wrap mw-split">
+    <div class="mw-stack">
+      <span class="ms-label">// Paso 03</span>
+      <h2 id="h-p3" class="mw-h2">Atiende por WhatsApp.</h2>
+      <p class="mw-lead">Tus clientes escriben como siempre. El agente lee la pregunta, busca en tu catálogo y contesta con la información que tiene.</p>
+      <ol class="mw-flow">
+        <li><span class="mw-flow__n">a</span><p class="mw-p"><strong>Entiende lo que buscan</strong>, aunque no usen el nombre exacto del producto.</p></li>
+        <li><span class="mw-flow__n">b</span><p class="mw-p"><strong>Busca en tu catálogo</strong> los productos que corresponden.</p></li>
+        <li><span class="mw-flow__n">c</span><p class="mw-p"><strong>Contesta con tus datos</strong>: características, precio y existencia. Si algo no está, lo dice.</p></li>
+      </ol>
+    </div>
+    <div class="mw-stack-sm">
+      <div class="mw-device">
+        <div class="mw-device__bar"><span>WhatsApp · Ferretería de ejemplo</span><span>ilustrativo</span></div>
+        <div class="mw-device__body ms-transcript mw-chat">
+          <div class="ms-day">– hoy –</div>
+          <div class="ms-msg"><div class="ms-msg__bubble">buenas, ¿tienen un taladro que sirva para concreto?</div><span class="ms-msg__meta">16:18</span></div>
+          <div class="ms-msg ms-msg--ours ms-msg--bot"><div class="ms-msg__bubble">Sí. El taladro percutor de 1/2" y 650 W sirve para concreto e incluye maletín. Está en $1,289.00 y hay 5.</div><span class="ms-msg__meta"><b>bot</b> · 16:18</span></div>
+          <div class="ms-msg"><div class="ms-msg__bubble">¿y el tubo PVC de 1/2 aguanta agua caliente?</div><span class="ms-msg__meta">16:21</span></div>
+          <div class="ms-msg ms-msg--ours ms-msg--bot"><div class="ms-msg__bubble">El tubo PVC hidráulico de 1/2" está en $78.00 el tramo de 6 m y hay 40. La ficha no dice si aguanta agua caliente, así que no te lo puedo asegurar.</div><span class="ms-msg__meta"><b>bot</b> · 16:21</span></div>
+        </div>
+      </div>
+      <span class="mw-illus">Conversación ilustrativa · no conectada a un servicio real</span>
+    </div>
+  </div>
+</section>
+
+<!-- Paso 4 -->
+<section id="paso-4" class="mw-sec mw-anchor" aria-labelledby="h-p4">
+  <div class="mw-wrap mw-split">
+    <div class="mw-stack">
+      <span class="ms-label">// Paso 04</span>
+      <h2 id="h-p4" class="mw-h2">Avanza hacia la venta.</h2>
+      <p class="mw-lead">El agente ayuda al cliente a dar con el producto. Si el cliente quiere apartarlo, el agente puede registrar el apartado, siempre que el cliente lo autorice y se cumplan las reglas de tu negocio.</p>
+      <div class="mw-card mw-card--canvas">
+        <span class="ms-label ms-label--plain">// El estado, tal como es</span>
+        <p class="mw-p">El agente le dice al cliente cómo quedó: registrado, o por qué no se pudo. No da por hecho un apartado que no se registró.</p>
+      </div>
+    </div>
+    <div class="mw-stack-sm">
+      <div class="mw-device">
+        <div class="mw-device__bar"><span>WhatsApp · Ferretería de ejemplo</span><span>ilustrativo</span></div>
+        <div class="mw-device__body ms-transcript mw-chat">
+          <div class="ms-msg"><div class="ms-msg__bubble">apártame el percutor, paso mañana temprano</div><span class="ms-msg__meta">16:24</span></div>
+          <div class="ms-msg ms-msg--ours ms-msg--bot"><div class="ms-msg__bubble">Puedo registrar el apartado de 1 taladro percutor de 1/2" a tu nombre. ¿Lo registro?</div><span class="ms-msg__meta"><b>bot</b> · 16:24</span></div>
+          <div class="ms-msg"><div class="ms-msg__bubble">sí, a nombre de Raúl</div><span class="ms-msg__meta">16:25</span></div>
+          <div class="ms-day">– el cliente autorizó el apartado –</div>
+          <div class="ms-msg ms-msg--ours ms-msg--bot"><div class="ms-msg__bubble">Quedó registrado con el código K-3FRB, según las reglas de la tienda.</div><span class="ms-msg__meta"><b>bot</b> · 16:25</span></div>
+        </div>
+      </div>
+      <div class="ms-hold" style="width: 100%;">
+        <div class="ms-hold__top"><span class="ms-hold__code">K-3FRB</span><span class="ms-mono ms-muted" style="font-size: 12px;">registrado</span></div>
+        <div class="ms-hold__item"><b>1×</b> Taladro percutor 1/2" 650 W</div>
+        <div class="ms-hold__meta">Raúl · autorizado por el cliente</div>
+      </div>
+      <span class="mw-illus">Ejemplo ilustrativo</span>
+    </div>
+  </div>
+</section>
+
+<section class="mw-sec mw-sec--surface" aria-labelledby="h-cta">
+  <div class="mw-wrap">
+    <div class="mw-card" style="padding: 48px; gap: 20px; align-items: flex-start; border-color: var(--ink);">
+      <h2 id="h-cta" class="mw-h2">Míralo con productos como los tuyos.</h2>
+      <p class="mw-lead">En una demo te mostramos el proceso completo y cómo se vería con tu tipo de negocio.</p>
+      <div class="mw-actions">
+        <a class="ms-btn ms-btn--primary mw-btn-lg" href="Demo.dc.html">Solicitar demo</a>
+        <a class="ms-link" href="Funcionalidades.dc.html">Ver funcionalidades →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+<dc-import name="Footer" hint-size="100%,380px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4300}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

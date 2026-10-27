@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Preguntas frecuentes — mostrador_</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="ds/mostrador/components/bundle.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:#1b1c1e}a:hover{color:#5c5e5d}
+</style>
+</helmet>
+<div class="mw-page" style="font-family: var(--font-sans); color: var(--ink); background: var(--canvas);">
+<dc-import name="Nav" current="faq" hint-size="100%,72px"></dc-import>
+<main>
+
+<section class="mw-hero" style="padding-bottom: 48px;" aria-labelledby="h-top">
+  <div class="mw-wrap">
+    <div class="mw-head" style="margin-bottom: 0;">
+      <span class="ms-label ms-label--plain">// Preguntas frecuentes</span>
+      <h1 id="h-top" class="mw-h1">Preguntas frecuentes.</h1>
+      <p class="mw-lead">Respuestas cortas sobre qué hace mostrador_, cómo usa tu inventario y cómo conocerlo.</p>
+    </div>
+  </div>
+</section>
+
+<section class="mw-sec" style="padding-top: 48px;" aria-label="Preguntas">
+  <div class="mw-wrap" style="display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start;">
+    <nav aria-label="Temas" class="mw-stack-sm" style="flex: 1 1 220px; max-width: 280px;">
+      <span class="ms-label">// Temas</span>
+      <a class="ms-link" href="#producto">El producto</a>
+      <a class="ms-link" href="#inventario">Inventario y respuestas</a>
+      <a class="ms-link" href="#apartados">Apartados</a>
+      <a class="ms-link" href="#empezar">Empezar</a>
+    </nav>
+    <div class="mw-stack" style="flex: 999 1 560px; min-width: 0; gap: 40px;">
+
+      <div id="producto" class="mw-stack-sm mw-anchor">
+        <h2 class="mw-h3">El producto</h2>
+        <div class="mw-faq">
+          <details open="open"><summary>¿Qué es mostrador_?</summary><div class="mw-faq__a"><p>Un servicio que crea un agente de IA para atender a tus clientes por WhatsApp. El agente contesta preguntas sobre tus productos con la información de tu inventario y puede ayudar a registrar apartados.</p></div></details>
+          <details><summary>¿Cómo funciona el agente de IA?</summary><div class="mw-faq__a"><p>Lee lo que pregunta el cliente, busca en la información de productos que le diste y contesta con lo que encuentra: características, precio y existencia. Contesta en lenguaje natural, como lo haría alguien de tu mostrador.</p></div></details>
+        </div>
+      </div>
+
+      <div id="inventario" class="mw-stack-sm mw-anchor">
+        <h2 class="mw-h3">Inventario y respuestas</h2>
+        <div class="mw-faq">
+          <details><summary>¿Cómo se proporciona el inventario?</summary><div class="mw-faq__a"><p>Cargas la información de tus productos en mostrador_. En la demo te mostramos las formas de carga disponibles para tu negocio.</p></div></details>
+          <details><summary>¿Qué información puede responder sobre mis productos?</summary><div class="mw-faq__a"><p>La que tengas en tu catálogo: nombre, identificador, descripción, características, precio y existencia. Mientras más completa sea cada ficha, más preguntas puede contestar.</p></div></details>
+          <details><summary>¿Cómo consulta precios y disponibilidad?</summary><div class="mw-faq__a"><p>Con los datos de precio y existencia que tiene mostrador_ al momento de la conversación. Por eso es importante mantenerlos al día.</p></div></details>
+          <details><summary>¿Qué pasa si falta información sobre un producto?</summary><div class="mw-faq__a"><p>El agente no la inventa. Le dice al cliente que no tiene ese dato.</p></div></details>
+        </div>
+      </div>
+
+      <div id="apartados" class="mw-stack-sm mw-anchor">
+        <h2 class="mw-h3">Apartados</h2>
+        <div class="mw-faq">
+          <details><summary>¿Puede ayudar a registrar apartados?</summary><div class="mw-faq__a"><p>Sí, cuando el cliente lo autoriza y se cumplen las reglas de tu negocio. Si no se cumplen, el agente no registra el apartado y le explica al cliente por qué.</p><p>Qué productos se pueden apartar y bajo qué condiciones depende de cómo trabaje tu negocio.</p></div></details>
+        </div>
+      </div>
+
+      <div id="empezar" class="mw-stack-sm mw-anchor">
+        <h2 class="mw-h3">Empezar</h2>
+        <div class="mw-faq">
+          <details><summary>¿Necesito conocimientos técnicos para usarlo?</summary><div class="mw-faq__a"><p>No necesitas programar. mostrador_ está pensado para dueños y encargados de negocio. En la demo ves cómo es el proceso.</p></div></details>
+          <details><summary>¿Cómo puedo conocer el producto antes de contratarlo?</summary><div class="mw-faq__a"><p>Solicita una demo y te mostramos cómo atendería a tus clientes. <a class="ms-link" href="Demo.dc.html">Solicitar demo →</a></p></div></details>
+        </div>
+      </div>
+
+      <div class="mw-card" style="padding: 32px; gap: 16px; align-items: flex-start; border-color: var(--ink);">
+        <h2 class="mw-h3" style="font-size: 24px; line-height: 30px;">¿Tienes otra pregunta?</h2>
+        <p class="mw-p">En la demo la resolvemos con ejemplos de tu tipo de negocio.</p>
+        <a class="ms-btn ms-btn--primary mw-btn-lg" href="Demo.dc.html">Solicitar demo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+<dc-import name="Footer" hint-size="100%,380px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2900}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

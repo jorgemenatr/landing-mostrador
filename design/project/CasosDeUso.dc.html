@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Casos de uso — mostrador_</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="ds/mostrador/components/bundle.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:#1b1c1e}a:hover{color:#5c5e5d}
+</style>
+</helmet>
+<div class="mw-page" style="font-family: var(--font-sans); color: var(--ink); background: var(--canvas);">
+<dc-import name="Nav" current="casos" hint-size="100%,72px"></dc-import>
+<main>
+
+<section class="mw-hero" aria-labelledby="h-top">
+  <div class="mw-wrap">
+    <div class="mw-head" style="margin-bottom: 32px;">
+      <span class="ms-label ms-label--plain">// Para tu negocio</span>
+      <h1 id="h-top" class="mw-h1">Para negocios que venden todos los días.</h1>
+      <p class="mw-lead">Cinco ejemplos de negocios con inventario. En cada uno: la pregunta típica del cliente, la información que necesita el agente y cómo contestaría. Productos y conversaciones son ficticios.</p>
+    </div>
+    <nav aria-label="Giros" class="mw-actions" style="gap: 8px;">
+      <a class="ms-btn ms-btn--sm ms-btn--quiet" href="#ropa">Ropa y calzado</a>
+      <a class="ms-btn ms-btn--sm ms-btn--quiet" href="#refacciones">Refaccionarias</a>
+      <a class="ms-btn ms-btn--sm ms-btn--quiet" href="#ferreteria">Ferreterías</a>
+      <a class="ms-btn ms-btn--sm ms-btn--quiet" href="#electronica">Electrónica</a>
+      <a class="ms-btn ms-btn--sm ms-btn--quiet" href="#distribuidores">Distribuidores</a>
+    </nav>
+  </div>
+</section>
+
+<!-- Ropa y calzado -->
+<section id="ropa" class="mw-sec mw-sec--surface mw-anchor" aria-labelledby="h-ropa">
+  <div class="mw-wrap">
+    <div class="mw-head" style="margin-bottom: 32px;">
+      <span class="ms-label">// 01 · Ropa y calzado</span>
+      <h2 id="h-ropa" class="mw-h2">“¿La tienes en mediana?”</h2>
+      <p class="mw-p">Tallas, colores, materiales, precio y existencia por talla.</p>
+    </div>
+    <div class="mw-grid mw-cols-3" style="gap: 16px;">
+      <div class="mw-card mw-card--canvas"><span class="ms-label ms-label--plain">A · El cliente pregunta</span><div class="ms-transcript mw-chat"><div class="ms-msg"><div class="ms-msg__bubble">¿la chamarra Norte azul la tienes en mediana? ¿es impermeable?</div><span class="ms-msg__meta">10:15</span></div></div></div>
+      <div class="mw-card"><span class="ms-label ms-label--plain">B · Lo que usa el agente</span>
+        <dl style="margin: 0; display: flex; flex-direction: column; gap: 10px;">
+          <div class="ms-fact"><dt>Producto</dt><dd>Chamarra Norte azul · <span class="ms-mono">CH-4402</span></dd></div>
+          <div class="ms-fact"><dt>Características</dt><dd>rompevientos · repelente al agua</dd></div>
+          <div class="ms-fact"><dt>Existencia por talla</dt><dd class="ms-mono">CH 2 · M 1 · G 0</dd></div>
+          <div class="ms-fact"><dt>Precio</dt><dd class="ms-mono" style="font-weight: 700;">$1,390.00</dd></div>
+        </dl>
+      </div>
+      <div class="mw-card mw-card--canvas"><span class="ms-label ms-label--plain">C · El agente contesta</span><div class="ms-transcript mw-chat"><div class="ms-msg ms-msg--ours ms-msg--bot" style="max-width: 100%;"><div class="ms-msg__bubble">Sí, queda 1 en mediana. Está en $1,390.00. Es rompevientos y repelente al agua; la ficha no dice que sea impermeable.</div><span class="ms-msg__meta"><b>bot</b> · 10:15</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Refaccionarias -->
+<section id="refacciones" class="mw-sec mw-anchor" aria-labelledby="h-ref">
+  <div class="mw-wrap">
+    <div class="mw-head" style="margin-bottom: 32px;">
+      <span class="ms-label">// 02 · Refaccionarias</span>
+      <h2 id="h-ref" class="mw-h2">“¿Tienen la balata BD-1180?”</h2>
+      <p class="mw-p">Claves, características, precio y existencia. La compatibilidad con un vehículo solo se contesta si está registrada en tu catálogo: mostrador_ no incluye una base de datos de compatibilidades.</p>
+    </div>
+    <div class="mw-grid mw-cols-3" style="gap: 16px;">
+      <div class="mw-card mw-card--canvas"><span class="ms-label ms-label--plain">A · El cliente pregunta</span><div class="ms-transcript mw-chat"><div class="ms-msg"><div class="ms-msg__bubble">¿tienen la balata BD-1180? ¿le queda a mi Versa 2018?</div><span class="ms-msg__meta">09:40</span></div></div></div>
+      <div class="mw-card"><span class="ms-label ms-label--plain">B · Lo que usa el agente</span>
+        <dl style="margin: 0; display: flex; flex-direction: column; gap: 10px;">
+          <div class="ms-fact"><dt>Producto</dt><dd>Balata delantera cerámica · <span class="ms-mono">BD-1180</span></dd></div>
+          <div class="ms-fact"><dt>Características</dt><dd>juego de 4 piezas · cerámica</dd></div>
+          <div class="ms-fact"><dt>Compatibilidad</dt><dd style="color: var(--ink-subtle);">no registrada en el catálogo</dd></div>
+          <div class="ms-fact"><dt>Precio · existencia</dt><dd class="ms-mono" style="font-weight: 700;">$480.00 · 6</dd></div>
+        </dl>
+      </div>
+      <div class="mw-card mw-card--canvas"><span class="ms-label ms-label--plain">C · El agente contesta</span><div class="ms-transcript mw-chat"><div class="ms-msg ms-msg--ours ms-msg--bot" style="max-width: 100%;"><div class="ms-msg__bubble">Sí, la balata delantera cerámica BD-1180 está en $480.00 el juego y hay 6. En el catálogo no tengo registrado con qué autos es compatible, así que eso no te lo puedo confirmar.</div><span class="ms-msg__meta"><b>bot</b> · 09:40</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Ferreterías -->
+<section id="ferreteria" class="mw-sec mw-sec--surface mw-anchor" aria-labelledby="h-fer">
+  <div class="mw-wrap">
+    <div class="mw-head" style="margin-bottom: 32px;">
+      <span class="ms-label">// 03 · Ferreterías</span>
+      <h2 id="h-fer" class="mw-h2">“¿Qué medidas de tubo manejan?”</h2>
+      <p class="mw-p">Especificaciones, opciones disponibles, precio y existencia.</p>
+    </div>
+    <div class="mw-grid mw-cols-3" style="gap: 16px;">
+      <div class="mw-card mw-card--canvas"><span class="ms-label ms-label--plain">A · El cliente pregunta</span><div class="ms-transcript mw-chat"><div class="ms-msg"><div class="ms-msg__bubble">¿qué medidas de tubo PVC hidráulico tienen y a cómo?</div><span class="ms-msg__meta">08:55</span></div></div></div>
+      <div class="mw-card"><span class="ms-label ms-label--plain">B · Lo que usa el agente</span>
+        <dl style="margin: 0; display: flex; flex-direction: column; gap: 10px;">
+          <div class="ms-fact"><dt>Productos</dt><dd>Tubo PVC hidráulico · <span class="ms-mono">PV-012</span>, <span class="ms-mono">PV-034</span></dd></div>
+          <div class="ms-fact"><dt>Medidas</dt><dd>1/2" y 3/4" · tramo de 6 m</dd></div>
+          <div class="ms-fact"><dt>Precio</dt><dd class="ms-mono" style="font-weight: 700;">$78.00 · $112.00</dd></div>
+          <div class="ms-fact"><dt>Existencia</dt><dd class="ms-mono" style="font-weight: 700;">40 · 0</dd></div>
+        </dl>
+      </div>
+      <div class="mw-card mw-card--canvas"><span class="ms-label ms-label--plain">C · El agente contesta</span><div class="ms-transcript mw-chat"><div class="ms-msg ms-msg--ours ms-msg--bot" style="max-width: 100%;"><div class="ms-msg__bubble">Manejamos de 1/2" y de 3/4", en tramos de 6 m. El de 1/2" está en $78.00 y hay 40. El de 3/4" está en $112.00, pero ahorita no hay.</div><span class="ms-msg__meta"><b>bot</b> · 08:55</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Electrónica -->
+<section id="electronica" class="mw-sec mw-anchor" aria-labelledby="h-ele">
+  <div class="mw-wrap">
+    <div class="mw-head" style="margin-bottom: 32px;">
+      <span class="ms-label">// 04 · Electrónica</span>
+      <h2 id="h-ele" class="mw-h2">“¿Qué diferencia hay entre los dos?”</h2>
+      <p class="mw-p">Características técnicas, modelos y precios.</p>
+    </div>
+    <div class="mw-grid mw-cols-3" style="gap: 16px;">
+      <div class="mw-card mw-card--canvas"><span class="ms-label ms-label--plain">A · El cliente pregunta</span><div class="ms-transcript mw-chat"><div class="ms-msg"><div class="ms-msg__bubble">¿qué diferencia hay entre la bocina Eco y la Eco Max?</div><span class="ms-msg__meta">19:20</span></div></div></div>
+      <div class="mw-card"><span class="ms-label ms-label--plain">B · Lo que usa el agente</span>
+        <dl style="margin: 0; display: flex; flex-direction: column; gap: 10px;">
+          <div class="ms-fact"><dt>Eco · <span class="ms-mono">BP-110</span></dt><dd>10 W · resistente a salpicaduras · $749.00</dd></div>
+          <div class="ms-fact"><dt>Eco Max · <span class="ms-mono">BP-220</span></dt><dd>20 W · sumergible · $1,249.00</dd></div>
+          <div class="ms-fact"><dt>Existencia</dt><dd class="ms-mono" style="font-weight: 700;">6 · 3</dd></div>
+        </dl>
+      </div>
+      <div class="mw-card mw-card--canvas"><span class="ms-label ms-label--plain">C · El agente contesta</span><div class="ms-transcript mw-chat"><div class="ms-msg ms-msg--ours ms-msg--bot" style="max-width: 100%;"><div class="ms-msg__bubble">La Eco es de 10 W y resiste salpicaduras, está en $749.00. La Eco Max es de 20 W y es sumergible, está en $1,249.00. Hay 6 Eco y 3 Eco Max.</div><span class="ms-msg__meta"><b>bot</b> · 19:20</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Distribuidores -->
+<section id="distribuidores" class="mw-sec mw-sec--surface mw-anchor" aria-labelledby="h-dis">
+  <div class="mw-wrap">
+    <div class="mw-head" style="margin-bottom: 32px;">
+      <span class="ms-label">// 05 · Distribuidores y mayoristas</span>
+      <h2 id="h-dis" class="mw-h2">“¿Cuántas piezas trae la caja?”</h2>
+      <p class="mw-p">Información del catálogo, presentaciones y existencia, según lo que tengas registrado.</p>
+    </div>
+    <div class="mw-grid mw-cols-3" style="gap: 16px;">
+      <div class="mw-card mw-card--canvas"><span class="ms-label ms-label--plain">A · El cliente pregunta</span><div class="ms-transcript mw-chat"><div class="ms-msg"><div class="ms-msg__bubble">¿cuántas piezas trae la caja del aceite 1 L y cuántas cajas tienen?</div><span class="ms-msg__meta">11:05</span></div></div></div>
+      <div class="mw-card"><span class="ms-label ms-label--plain">B · Lo que usa el agente</span>
+        <dl style="margin: 0; display: flex; flex-direction: column; gap: 10px;">
+          <div class="ms-fact"><dt>Producto</dt><dd>Aceite multigrado 1 L · caja · <span class="ms-mono">AC-1012</span></dd></div>
+          <div class="ms-fact"><dt>Presentación</dt><dd>caja con 12 piezas</dd></div>
+          <div class="ms-fact"><dt>Precio · existencia</dt><dd class="ms-mono" style="font-weight: 700;">$1,560.00 · 18 cajas</dd></div>
+        </dl>
+      </div>
+      <div class="mw-card mw-card--canvas"><span class="ms-label ms-label--plain">C · El agente contesta</span><div class="ms-transcript mw-chat"><div class="ms-msg ms-msg--ours ms-msg--bot" style="max-width: 100%;"><div class="ms-msg__bubble">La caja trae 12 piezas de 1 L y está en $1,560.00. Tenemos 18 cajas.</div><span class="ms-msg__meta"><b>bot</b> · 11:05</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="mw-sec" aria-labelledby="h-cta">
+  <div class="mw-wrap">
+    <div class="mw-card" style="padding: 48px; gap: 20px; align-items: flex-start; border-color: var(--ink);">
+      <span class="ms-label ms-label--plain">// En todos los casos</span>
+      <h2 id="h-cta" class="mw-h2">La calidad de la respuesta depende de tu catálogo.</h2>
+      <p class="mw-lead">El agente contesta con lo que tienes registrado. En la demo vemos qué información conviene tener para tu tipo de negocio.</p>
+      <div class="mw-actions">
+        <a class="ms-btn ms-btn--primary mw-btn-lg" href="Demo.dc.html">Solicitar demo</a>
+        <a class="ms-link" href="PreguntasFrecuentes.dc.html">Ver preguntas frecuentes →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+<dc-import name="Footer" hint-size="100%,380px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4400}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

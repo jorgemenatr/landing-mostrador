@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Solicitar demo — mostrador_</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="ds/mostrador/components/bundle.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:#1b1c1e}a:hover{color:#5c5e5d}
+</style>
+</helmet>
+<div class="mw-page" style="font-family: var(--font-sans); color: var(--ink); background: var(--canvas);">
+<dc-import name="Nav" current="demo" hint-size="100%,72px"></dc-import>
+<main>
+
+<section class="mw-hero" aria-labelledby="h-top">
+  <div class="mw-wrap mw-split mw-split--top" style="grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);">
+    <div class="mw-stack">
+      <a class="ms-link" href="Main.dc.html" style="align-self: flex-start;">← Volver al inicio</a>
+      <span class="ms-label ms-label--plain">// Solicitar demo</span>
+      <h1 id="h-top" class="mw-h1">Conoce mostrador_ en acción.</h1>
+      <p class="mw-lead">Descubre cómo un agente de IA puede responder preguntas sobre los productos de tu negocio a través de WhatsApp.</p>
+      <div class="mw-stack-sm">
+        <span class="ms-label">// Lo que vas a ver</span>
+        <ul class="mw-flow">
+          <li><span class="mw-flow__n">01</span><p class="mw-p"><strong>Cómo se usa tu inventario</strong> para contestar sobre características, precios y existencia.</p></li>
+          <li><span class="mw-flow__n">02</span><p class="mw-p"><strong>Cómo conversa el agente</strong> con un cliente por WhatsApp.</p></li>
+          <li><span class="mw-flow__n">03</span><p class="mw-p"><strong>Cómo funcionan los apartados</strong>, con autorización del cliente y las reglas de tu negocio.</p></li>
+          <li><span class="mw-flow__n">04</span><p class="mw-p"><strong>Qué necesitarías</strong> para empezar con tu tipo de negocio.</p></li>
+        </ul>
+      </div>
+      <div class="mw-device">
+        <div class="mw-device__bar"><span>Vista previa · WhatsApp</span><span>ilustrativo</span></div>
+        <div class="mw-device__body ms-transcript mw-chat">
+          <div class="ms-msg"><div class="ms-msg__bubble">¿tienen los tenis Brisa en 27?</div><span class="ms-msg__meta">11:02</span></div>
+          <div class="ms-msg ms-msg--ours ms-msg--bot"><div class="ms-msg__bubble">Sí. En blanco hay 3 pares en talla 27, están en $1,149.00. En negro ya no hay en 27.</div><span class="ms-msg__meta"><b>bot</b> · 11:02</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mw-card" style="padding: 32px; gap: 20px; border-color: var(--ink);">
+      <sc-if value="{{showForm}}" hint-placeholder-val="{{true}}">
+        <div class="mw-stack-sm">
+          <h2 class="mw-h3" style="font-size: 24px; line-height: 30px;">Solicita tu demo</h2>
+          <p class="mw-small">Déjanos tus datos y cuéntanos qué vendes.</p>
+        </div>
+        <sc-if value="{{notSent}}" hint-placeholder-val="{{false}}">
+          <div class="ms-notice" role="alert">
+            <p style="margin: 0 0 4px;"><b>No se envió tu solicitud.</b></p>
+            <p class="mw-p" style="color: var(--ink); font-size: 14px; line-height: 20px;">Este formulario todavía no está conectado a un sistema que reciba solicitudes, así que tus datos no se guardaron. Inténtalo más tarde.</p>
+          </div>
+        </sc-if>
+        <form class="mw-form" onSubmit="{{submit}}" noValidate="{{yes}}" aria-label="Solicitud de demo">
+          <div class="mw-fieldset">
+            <label for="f-nombre">Tu nombre</label>
+            <input id="f-nombre" class="mw-control" type="text" autocomplete="name" value="{{form.nombre}}" onChange="{{onNombre}}" aria-invalid="{{inv.nombre}}" aria-describedby="e-nombre" aria-required="true">
+            <sc-if value="{{err.nombre}}" hint-placeholder-val="{{false}}"><p id="e-nombre" class="mw-err">{{err.nombre}}</p></sc-if>
+          </div>
+          <div class="mw-fieldset">
+            <label for="f-negocio">Nombre de tu negocio</label>
+            <input id="f-negocio" class="mw-control" type="text" autocomplete="organization" value="{{form.negocio}}" onChange="{{onNegocio}}" aria-invalid="{{inv.negocio}}" aria-describedby="e-negocio" aria-required="true">
+            <sc-if value="{{err.negocio}}" hint-placeholder-val="{{false}}"><p id="e-negocio" class="mw-err">{{err.negocio}}</p></sc-if>
+          </div>
+          <div class="mw-fieldset">
+            <label for="f-giro">Giro <span class="mw-opt">(opcional)</span></label>
+            <select id="f-giro" class="mw-control" value="{{form.giro}}" onChange="{{onGiro}}">
+              <option value="">Elige uno</option>
+              <option value="ropa">Ropa y calzado</option>
+              <option value="refacciones">Refaccionaria</option>
+              <option value="ferreteria">Ferretería</option>
+              <option value="electronica">Electrónica</option>
+              <option value="distribuidor">Distribuidor o mayorista</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+          <div class="mw-fieldset">
+            <label for="f-contacto">Correo o WhatsApp para contactarte</label>
+            <input id="f-contacto" class="mw-control" type="text" autocomplete="email" placeholder="tu@correo.com o 10 dígitos" value="{{form.contacto}}" onChange="{{onContacto}}" aria-invalid="{{inv.contacto}}" aria-describedby="e-contacto" aria-required="true">
+            <sc-if value="{{err.contacto}}" hint-placeholder-val="{{false}}"><p id="e-contacto" class="mw-err">{{err.contacto}}</p></sc-if>
+          </div>
+          <div class="mw-fieldset">
+            <label for="f-nota">¿Qué vendes? <span class="mw-opt">(opcional)</span></label>
+            <textarea id="f-nota" class="mw-control" placeholder="por ejemplo: tenis y ropa deportiva, unos 300 productos" value="{{form.nota}}" onChange="{{onNota}}"></textarea>
+          </div>
+          <button type="submit" class="ms-btn ms-btn--primary mw-btn-lg" style="width: 100%;">Solicitar demo</button>
+          <p class="mw-small">Usaremos estos datos solo para contactarte sobre la demo.</p>
+        </form>
+      </sc-if>
+      <sc-if value="{{showConfirm}}" hint-placeholder-val="{{false}}">
+        <div class="mw-stack-sm" role="status">
+          <span class="ms-tag ms-tag--ok" style="align-self: flex-start;">✓ solicitud recibida</span>
+          <h2 class="mw-h3" style="font-size: 24px; line-height: 30px;">Recibimos tu solicitud.</h2>
+          <p class="mw-p">Te vamos a contactar por el medio que nos dejaste para acordar la demo.</p>
+          <a class="ms-link" href="Main.dc.html" style="align-self: flex-start;">Volver al inicio →</a>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+</section>
+
+</main>
+<dc-import name="Footer" hint-size="100%,380px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"vista":{"editor":"enum","options":["formulario","confirmación"],"default":"formulario","section":"Estados"},"$preview":{"width":1440,"height":1900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const st = this.state || {};
+    const form = st.form || { nombre: '', negocio: '', giro: '', contacto: '', nota: '' };
+    const err = st.err || {};
+    const set = (k) => (e) => {
+      const next = { ...form, [k]: e.target.value };
+      const nextErr = { ...err };
+      delete nextErr[k];
+      this.setState({ form: next, err: nextErr });
+    };
+    const validate = (f) => {
+      const out = {};
+      if (!f.nombre.trim()) out.nombre = 'Escribe tu nombre.';
+      if (!f.negocio.trim()) out.negocio = 'Escribe el nombre de tu negocio.';
+      const c = f.contacto.trim();
+      if (!c) {
+        out.contacto = 'Déjanos un correo o un WhatsApp.';
+      } else if (c.indexOf('@') >= 0) {
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(c)) out.contacto = 'Revisa el correo: falta algo.';
+      } else if (c.replace(/\D/g, '').length < 10) {
+        out.contacto = 'El número debe tener al menos 10 dígitos.';
+      }
+      return out;
+    };
+    const submit = (e) => {
+      if (e && e.preventDefault) e.preventDefault();
+      const v = validate(form);
+      if (Object.keys(v).length) {
+        this.setState({ err: v, notSent: false });
+        return;
+      }
+      // Sin integración: no hay endpoint configurado para recibir solicitudes.
+      this.setState({ err: {}, notSent: true });
+    };
+    const vista = this.props.vista ?? 'formulario';
+    const inv = {};
+    ['nombre', 'negocio', 'contacto'].forEach((k) => { inv[k] = err[k] ? 'true' : 'false'; });
+    return {
+      form, err, inv,
+      notSent: !!st.notSent,
+      showForm: vista !== 'confirmación',
+      showConfirm: vista === 'confirmación',
+      yes: true,
+      submit,
+      onNombre: set('nombre'),
+      onNegocio: set('negocio'),
+      onGiro: set('giro'),
+      onContacto: set('contacto'),
+      onNota: set('nota'),
+    };
+  }
+}
+</script>
+</body>
+</html>

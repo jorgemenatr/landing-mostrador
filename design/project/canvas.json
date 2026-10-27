@@ -1,0 +1,28 @@
+{
+  "v": 3,
+  "createdOnFiles": {"v": 1, "at": "2026-10-27T16:40:00Z"},
+  "title": "Sitio web Mostrador",
+  "launch": {"view": "canvas"},
+  "pages": [],
+  "boards": {
+    "Main.dc.html": {"x": 0, "y": 0, "w": 1440, "h": 9400, "title": "/ — Inicio", "expand": "fill", "is_interactive": true},
+    "ComoFunciona.dc.html": {"x": 1520, "y": 0, "w": 1440, "h": 4300, "title": "/como-funciona", "expand": "fill", "is_interactive": true},
+    "Funcionalidades.dc.html": {"x": 3040, "y": 0, "w": 1440, "h": 4600, "title": "/funcionalidades", "expand": "fill", "is_interactive": true},
+    "CasosDeUso.dc.html": {"x": 4560, "y": 0, "w": 1440, "h": 4400, "title": "/casos-de-uso", "expand": "fill", "is_interactive": true},
+    "PreguntasFrecuentes.dc.html": {"x": 6080, "y": 0, "w": 1440, "h": 2900, "title": "/preguntas-frecuentes", "expand": "fill", "is_interactive": true},
+    "Demo.dc.html": {"x": 7600, "y": 0, "w": 1440, "h": 1900, "title": "/demo", "expand": "fill", "is_interactive": true},
+    "Nav.dc.html": {"x": 0, "y": -700, "w": 1440, "h": 72, "title": "Componente · Navegación", "is_interactive": true},
+    "Footer.dc.html": {"x": 1520, "y": -700, "w": 1440, "h": 380, "title": "Componente · Footer"}
+  },
+  "order": ["Main.dc.html", "ComoFunciona.dc.html", "Funcionalidades.dc.html", "CasosDeUso.dc.html", "PreguntasFrecuentes.dc.html", "Demo.dc.html", "Nav.dc.html", "Footer.dc.html"],
+  "notes": {
+    "titleShared": {"x": 0, "y": -960, "text": "Componentes compartidos", "kind": "title1", "maxW": 2960},
+    "titlePages": {"x": 0, "y": -260, "text": "Páginas del sitio", "kind": "title1", "maxW": 9040},
+    "pendDemo": {"x": 9120, "y": 0, "w": 360, "fill": "orange", "text": "PENDIENTE · Integración de demo\n\nEl formulario de /demo valida los campos, pero no hay un sistema que reciba solicitudes (no existe endpoint, CRM, calendario ni contacto confirmado). Por eso, al enviar, muestra un error honesto y no guarda nada.\n\nFalta definir: a dónde llega la solicitud, quién la atiende y qué datos se necesitan. La vista de confirmación solo debe mostrarse después de un envío real (Tweaks › vista)."},
+    "pendRutas": {"x": 9120, "y": 560, "w": 360, "fill": "gray", "text": "PENDIENTE · Rutas no incluidas\n\n/login y /registro: no hay una app existente en el repo para reutilizar.\n/privacidad y /terminos: no se entregaron los textos legales.\n\nEl footer no enlaza a ellas hasta tener destinos reales. Tampoco hay página de precios: faltan planes confirmados."},
+    "pendConfirmar": {"x": 9120, "y": 1040, "w": 360, "fill": "blue", "text": "POR CONFIRMAR con el producto\n\n• Formas de cargar el inventario (archivo, captura, integración).\n• Opciones reales de configuración del agente.\n• Si el equipo puede tomar una conversación desde el panel (el design system lo muestra, pero no se afirma en el sitio).\n• Reglas de apartado: vigencia, confirmación en tienda."}
+  },
+  "designSystems": [
+    {"title": "mostrador_", "namespace": "mostrador", "artifact": "https://claude.ai/code/artifact/73ceeba7-e71e-43b5-9d76-64ae352ea2a6", "version": "1793038293-5247", "copiedAt": "2026-10-27T16:40:00Z"}
+  ]
+}
