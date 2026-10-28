@@ -67,8 +67,7 @@ a{color:#1b1c1e}a:hover{color:#c8401e}
     <p class="mw-lead" style="max-width: 560px;">Cuando el equipo está ocupado, el whatsapp no se contesta. Los clientes no tienen tanta paciencia.</p>
   </div>
   <div class="mw-ticker" aria-label="Preguntas típicas de clientes">
-    <div class="mw-ticker__track">
-      <span class="mw-ticker__item">¿cuánto cuesta?</span><span class="mw-ticker__item" style="position: relative">¿lo tienen en talla27?</span><span class="mw-ticker__item">¿hay en negro?</span><span class="mw-ticker__item">¿de qué material es?</span><span class="mw-ticker__item">¿todavía tienen el que publicaron?</span><span class="mw-ticker__item">¿me lo apartas?</span><span class="mw-ticker__item">¿qué medida es?</span><span class="mw-ticker__item">¿cuál me recomiendas?</span>
+    <div class="mw-ticker__track"><span class="mw-ticker__item">¿cuánto cuesta?</span><span class="mw-ticker__item" style="position: relative">¿lo tienen en talla 27?</span><span class="mw-ticker__item">¿hay en negro?</span><span class="mw-ticker__item">¿de qué material es?</span><span class="mw-ticker__item">¿todavía tienen el que publicaron?</span><span class="mw-ticker__item">¿me lo apartas?</span><span class="mw-ticker__item">¿qué medida es?</span><span class="mw-ticker__item">¿cuál me recomiendas?</span>
       <span class="mw-ticker__item" aria-hidden="true">¿cuánto cuesta?</span><span class="mw-ticker__item" aria-hidden="true">¿lo tienen en 27?</span><span class="mw-ticker__item" aria-hidden="true">¿hay en negro?</span><span class="mw-ticker__item" aria-hidden="true">¿de qué material es?</span><span class="mw-ticker__item" aria-hidden="true">¿todavía tienen el que publicaron?</span><span class="mw-ticker__item" aria-hidden="true">¿me lo apartas?</span><span class="mw-ticker__item" aria-hidden="true">¿qué medida es?</span><span class="mw-ticker__item" aria-hidden="true">¿cuál me recomiendas?</span>
     </div>
   </div>
@@ -86,12 +85,12 @@ a{color:#1b1c1e}a:hover{color:#c8401e}
       <article class="mw-card mw-card--hover">
         <span class="mw-big">01</span>
         <h3 class="mw-h3">Conoce tus productos</h3>
-        <p class="mw-p">Contesta sobre características con la información de tu inventario.</p>
+        <p class="mw-p">Contesta sólo con la información que se cargó en tu inventario.</p>
       </article>
       <article class="mw-card mw-card--hover">
         <span class="mw-big">02</span>
-        <h3 class="mw-h3">Dice precio y si hay</h3>
-        <p class="mw-p">Con los precios y existencias que tienes registrados.</p>
+        <h3 class="mw-h3">Comparte detalles y precio</h3>
+        <p class="mw-p">Atiende todo el día, toda la noche o en el horario que tú definas.</p>
       </article>
       <article class="mw-card mw-card--hover">
         <span class="mw-big">03</span>
@@ -108,7 +107,6 @@ a{color:#1b1c1e}a:hover{color:#c8401e}
     <div class="mw-head">
       <span class="mw-kicker">// Pruébalo</span>
       <h2 id="h-demo" class="mw-h2">Así atendería a <em class="mw-accent">tus clientes.</em></h2>
-      <p class="mw-p">Elige un giro. Son conversaciones de ejemplo, no el servicio real.</p>
     </div>
     <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin-bottom: 24px;">
     <div class="ms-seg" role="group" aria-label="Elige un ejemplo" style="flex-wrap: wrap;">
@@ -116,7 +114,7 @@ a{color:#1b1c1e}a:hover{color:#c8401e}
         <button type="button" aria-pressed="{{t.pressed}}" onClick="{{t.pick}}" style="height: 44px; padding: 0 18px; font-size: 14px;">{{t.label}}</button>
       </sc-for>
     </div>
-    <p class="mw-small" style="color: var(--ink); font-size: 15px; line-height: 22px;"><span style="color: var(--signal); font-family: var(--font-mono); font-weight: 700;">// </span>{{esc.nota}}</p>
+    <p class="mw-p">Elige un giro. Son conversaciones de ejemplo, no el servicio real.</p>
     </div>
     <div class="mw-split mw-split--top" style="gap: 24px;">
       <div class="mw-device">
@@ -157,8 +155,9 @@ a{color:#1b1c1e}a:hover{color:#c8401e}
         </div>
       </div>
     </div>
-    <div class="mw-actions" style="margin-top: 32px;">
-      <a class="ms-btn mw-cta mw-btn-lg" href="Demo.dc.html">Ver una demo</a>
+    <div class="mw-actions" style="margin-top: 32px; justify-content: space-between;">
+      <p class="mw-small" style="color: var(--ink); font-size: 15px; line-height: 22px"><span style="color: var(--signal); font-family: var(--font-mono); font-weight: 700;">// </span>{{esc.nota}}</p>
+      <a class="ms-btn mw-cta mw-btn-lg" href="Demo.dc.html" style="margin-left: auto;">Ver una demo</a>
     </div>
   </div>
 </section>
