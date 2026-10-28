@@ -67,10 +67,20 @@
               <p id="e-negocio" class="mw-err" hidden></p>
             </div>
           </div>
-          <div class="mw-fieldset">
-            <label for="f-contacto">Correo o WhatsApp</label>
-            <input id="f-contacto" name="contacto" class="mw-control" type="text" autocomplete="email" placeholder="tu@correo.com o 10 dígitos" aria-describedby="e-contacto" aria-required="true">
-            <p id="e-contacto" class="mw-err" hidden></p>
+          <div class="mw-stack-sm" style="gap: 8px;">
+            <div class="mw-grid mw-cols-2" style="gap: 18px;">
+              <div class="mw-fieldset">
+                <label for="f-correo">Correo</label>
+                <input id="f-correo" name="correo" class="mw-control" type="email" autocomplete="email" placeholder="tu@correo.com" aria-describedby="e-correo h-contacto">
+                <p id="e-correo" class="mw-err" hidden></p>
+              </div>
+              <div class="mw-fieldset">
+                <label for="f-whatsapp">WhatsApp</label>
+                <input id="f-whatsapp" name="whatsapp" class="mw-control" type="tel" autocomplete="tel" placeholder="10 dígitos" aria-describedby="e-whatsapp h-contacto">
+                <p id="e-whatsapp" class="mw-err" hidden></p>
+              </div>
+            </div>
+            <p id="h-contacto" class="mw-small">Con uno basta.</p>
           </div>
           <div class="mw-fieldset">
             <label for="f-giro">Giro <span class="mw-opt">(opcional)</span></label>

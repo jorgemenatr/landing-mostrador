@@ -110,15 +110,21 @@
 
   // ── Demo: formulario ──────────────────────────────────
   var EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  var MISSING_CONTACT = 'Déjanos un correo o un WhatsApp.';
 
   function validate(values) {
     var errs = {};
     if (!values.nombre.trim()) errs.nombre = 'Escribe tu nombre.';
     if (!values.negocio.trim()) errs.negocio = 'Escribe el nombre de tu negocio.';
-    var c = values.contacto.trim();
-    if (!c) errs.contacto = 'Déjanos un correo o un WhatsApp.';
-    else if (c.indexOf('@') >= 0) { if (!EMAIL.test(c)) errs.contacto = 'Revisa el correo: falta algo.'; }
-    else if (c.replace(/\D/g, '').length < 10) errs.contacto = 'El número debe tener al menos 10 dígitos.';
+    // Basta con un medio de contacto; el que se llene debe ser válido.
+    var correo = values.correo.trim();
+    var tel = values.whatsapp.trim();
+    if (!correo && !tel) {
+      errs.correo = MISSING_CONTACT;
+      errs.whatsapp = true;
+    }
+    if (correo && !EMAIL.test(correo)) errs.correo = 'Revisa el correo: falta algo.';
+    if (tel && tel.replace(/\D/g, '').length < 10) errs.whatsapp = 'El número debe tener al menos 10 dígitos.';
     return errs;
   }
 
@@ -131,18 +137,28 @@
     var errorText = document.querySelector('[data-form-error-text]');
     var defaultError = errorText.textContent;
     var submit = form.querySelector('button[type="submit"]');
-    var fields = ['nombre', 'negocio', 'contacto'];
+    var fields = ['nombre', 'negocio', 'correo', 'whatsapp'];
 
+    // msg puede ser texto (se muestra) o true (solo marca el campo como inválido).
     function setError(name, msg) {
       var input = form.elements[name];
       var out = document.getElementById('e-' + name);
+      var text = typeof msg === 'string' ? msg : '';
       input.setAttribute('aria-invalid', msg ? 'true' : 'false');
-      out.textContent = msg || '';
-      out.hidden = !msg;
+      out.textContent = text;
+      out.hidden = !text;
     }
 
     fields.forEach(function (name) {
-      form.elements[name].addEventListener('input', function () { setError(name, ''); });
+      form.elements[name].addEventListener('input', function () {
+        setError(name, '');
+        // Si faltaban ambos contactos, llenar uno quita el aviso de los dos.
+        if (name === 'correo' || name === 'whatsapp') {
+          var other = name === 'correo' ? 'whatsapp' : 'correo';
+          var otherText = document.getElementById('e-' + other).textContent;
+          if (!otherText || otherText === MISSING_CONTACT) setError(other, '');
+        }
+      });
     });
 
     function showFailure(msg) {
@@ -156,7 +172,8 @@
       var values = {
         nombre: form.elements.nombre.value,
         negocio: form.elements.negocio.value,
-        contacto: form.elements.contacto.value,
+        correo: form.elements.correo.value,
+        whatsapp: form.elements.whatsapp.value,
         giro: form.elements.giro.value,
       };
       var errs = validate(values);

@@ -38,6 +38,6 @@ Las conversaciones de ejemplo del inicio y de casos de uso viven en un `<script 
 
 ## Pendientes
 
-- **Recepción de solicitudes de demo.** Todavía no hay un sistema que las reciba. En `demo/index.html` el formulario tiene `data-endpoint=""`. Mientras esté vacío, al enviar se muestra un aviso de que la solicitud no se envió y no se guarda nada. Cuando exista un endpoint, pon su URL en ese atributo: el script envía `nombre`, `negocio`, `contacto` y `giro` como JSON por `POST` y solo muestra la confirmación si la respuesta es 2xx.
+- **Recepción de solicitudes de demo.** Todavía no hay un sistema que las reciba. En `demo/index.html` el formulario tiene `data-endpoint=""`. Mientras esté vacío, al enviar se muestra un aviso de que la solicitud no se envió y no se guarda nada. Cuando exista un endpoint, pon su URL en ese atributo: el script envía `nombre`, `negocio`, `correo`, `whatsapp` y `giro` como JSON por `POST` y solo muestra la confirmación si la respuesta es 2xx.
 - **`/login`, `/registro`, `/privacidad` y `/terminos`.** No existen todavía; el footer no los enlaza hasta tener destinos reales.
 - **Por confirmar con el producto:** formas de carga del inventario, opciones de configuración del agente y reglas de apartado.

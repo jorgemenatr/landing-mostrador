@@ -52,10 +52,20 @@ a{color:#1b1c1e}a:hover{color:#c8401e}
               <sc-if value="{{err.negocio}}" hint-placeholder-val="{{false}}"><p id="e-negocio" class="mw-err">{{err.negocio}}</p></sc-if>
             </div>
           </div>
-          <div class="mw-fieldset">
-            <label for="f-contacto">Correo o WhatsApp</label>
-            <input id="f-contacto" class="mw-control" type="text" autocomplete="email" placeholder="tu@correo.com o 10 dígitos" value="{{form.contacto}}" onChange="{{onContacto}}" aria-invalid="{{inv.contacto}}" aria-describedby="e-contacto" aria-required="true">
-            <sc-if value="{{err.contacto}}" hint-placeholder-val="{{false}}"><p id="e-contacto" class="mw-err">{{err.contacto}}</p></sc-if>
+          <div class="mw-stack-sm" style="gap: 8px;">
+            <div class="mw-grid mw-cols-2" style="gap: 18px;">
+              <div class="mw-fieldset">
+                <label for="f-correo">Correo</label>
+                <input id="f-correo" class="mw-control" type="email" autocomplete="email" placeholder="tu@correo.com" value="{{form.correo}}" onChange="{{onCorreo}}" aria-invalid="{{inv.correo}}" aria-describedby="e-correo h-contacto">
+                <sc-if value="{{err.correo}}" hint-placeholder-val="{{false}}"><p id="e-correo" class="mw-err">{{err.correo}}</p></sc-if>
+              </div>
+              <div class="mw-fieldset">
+                <label for="f-whatsapp">WhatsApp</label>
+                <input id="f-whatsapp" class="mw-control" type="tel" autocomplete="tel" placeholder="10 dígitos" value="{{form.whatsapp}}" onChange="{{onWhatsapp}}" aria-invalid="{{inv.whatsapp}}" aria-describedby="e-whatsapp h-contacto">
+                <sc-if value="{{err.whatsapp}}" hint-placeholder-val="{{false}}"><p id="e-whatsapp" class="mw-err">{{err.whatsapp}}</p></sc-if>
+              </div>
+            </div>
+            <p id="h-contacto" class="mw-small">Con uno basta.</p>
           </div>
           <div class="mw-fieldset">
             <label for="f-giro">Giro <span class="mw-opt">(opcional)</span></label>
@@ -93,26 +103,27 @@ a{color:#1b1c1e}a:hover{color:#c8401e}
 class Component extends DCLogic {
   renderVals() {
     const st = this.state || {};
-    const form = st.form || { nombre: '', negocio: '', giro: '', contacto: '' };
+    const form = st.form || { nombre: '', negocio: '', giro: '', correo: '', whatsapp: '' };
     const err = st.err || {};
     const set = (k) => (e) => {
       const next = { ...form, [k]: e.target.value };
       const nextErr = { ...err };
       delete nextErr[k];
+      if (k === 'correo' || k === 'whatsapp') { if (nextErr.correo === 'Déjanos un correo o un WhatsApp.') delete nextErr.correo; if (nextErr.whatsapp === ' ') delete nextErr.whatsapp; }
       this.setState({ form: next, err: nextErr });
     };
     const validate = (f) => {
       const out = {};
       if (!f.nombre.trim()) out.nombre = 'Escribe tu nombre.';
       if (!f.negocio.trim()) out.negocio = 'Escribe el nombre de tu negocio.';
-      const c = f.contacto.trim();
-      if (!c) {
-        out.contacto = 'Déjanos un correo o un WhatsApp.';
-      } else if (c.indexOf('@') >= 0) {
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(c)) out.contacto = 'Revisa el correo: falta algo.';
-      } else if (c.replace(/\D/g, '').length < 10) {
-        out.contacto = 'El número debe tener al menos 10 dígitos.';
+      const correo = f.correo.trim();
+      const tel = f.whatsapp.trim();
+      if (!correo && !tel) {
+        out.correo = 'Déjanos un correo o un WhatsApp.';
+        out.whatsapp = ' ';
       }
+      if (correo && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo)) out.correo = 'Revisa el correo: falta algo.';
+      if (tel && tel.replace(/\D/g, '').length < 10) out.whatsapp = 'El número debe tener al menos 10 dígitos.';
       return out;
     };
     const submit = (e) => {
@@ -127,7 +138,7 @@ class Component extends DCLogic {
     };
     const vista = this.props.vista ?? 'formulario';
     const inv = {};
-    ['nombre', 'negocio', 'contacto'].forEach((k) => { inv[k] = err[k] ? 'true' : 'false'; });
+    ['nombre', 'negocio', 'correo', 'whatsapp'].forEach((k) => { inv[k] = err[k] ? 'true' : 'false'; });
     return {
       form, err, inv,
       notSent: !!st.notSent,
@@ -138,7 +149,8 @@ class Component extends DCLogic {
       onNombre: set('nombre'),
       onNegocio: set('negocio'),
       onGiro: set('giro'),
-      onContacto: set('contacto'),
+      onCorreo: set('correo'),
+      onWhatsapp: set('whatsapp'),
     };
   }
 }
