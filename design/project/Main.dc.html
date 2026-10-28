@@ -111,10 +111,13 @@ a{color:#1b1c1e}a:hover{color:#c8401e}
       <h2 id="h-demo" class="mw-h2">Así atendería a <em class="mw-accent">tus clientes.</em></h2>
       <p class="mw-p">Elige un giro. Son conversaciones de ejemplo, no el servicio real.</p>
     </div>
-    <div class="ms-seg" role="group" aria-label="Elige un ejemplo" style="flex-wrap: wrap; margin-bottom: 24px;">
+    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin-bottom: 24px;">
+    <div class="ms-seg" role="group" aria-label="Elige un ejemplo" style="flex-wrap: wrap;">
       <sc-for list="{{tabs}}" as="t" hint-placeholder-count="3">
         <button type="button" aria-pressed="{{t.pressed}}" onClick="{{t.pick}}" style="height: 44px; padding: 0 18px; font-size: 14px;">{{t.label}}</button>
       </sc-for>
+    </div>
+    <p class="mw-small" style="color: var(--ink); font-size: 15px; line-height: 22px;"><span style="color: var(--signal); font-family: var(--font-mono); font-weight: 700;">// </span>{{esc.nota}}</p>
     </div>
     <div class="mw-split mw-split--top" style="gap: 24px;">
       <div class="mw-device">
@@ -155,8 +158,7 @@ a{color:#1b1c1e}a:hover{color:#c8401e}
         </div>
       </div>
     </div>
-    <div class="mw-actions" style="margin-top: 32px; justify-content: space-between;">
-      <p class="mw-small" style="color: var(--ink);">{{esc.nota}}</p>
+    <div class="mw-actions" style="margin-top: 32px;">
       <a class="ms-btn mw-cta mw-btn-lg" href="Demo.dc.html">Ver una demo</a>
     </div>
   </div>
