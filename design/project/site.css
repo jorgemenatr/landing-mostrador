@@ -258,3 +258,10 @@ textarea.mw-control { height: auto; min-height: 88px; padding: 12px 14px; resize
 }
 @keyframes mw-grow-y { from { transform: scaleY(0); } to { transform: scaleY(1); } }
 @media (prefers-reduced-motion: reduce) { .mw-timeline::after { animation: none; } }
+
+/* Cadena del apartado: siempre en 1 fila (5) o en 2 filas (3 + 2), nunca un elemento solo */
+.mw-chain { display: grid; grid-template-columns: repeat(5, auto); justify-content: start; gap: 10px 8px; }
+.mw-chain li { font-size: 13px; white-space: nowrap; }
+.mw-chain li span { padding: 8px 10px; }
+@media (max-width: 1200px) and (min-width: 1041px) { .mw-chain { grid-template-columns: repeat(3, auto); } }
+@media (max-width: 640px) { .mw-chain { grid-template-columns: repeat(3, auto); } }
