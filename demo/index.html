@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solicitar demo · mostrador_</title>
+<meta name="description" content="Conoce mostrador_ en acción: solicita una demo.">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/css/mostrador-ds.css">
+<link rel="stylesheet" href="/assets/css/site.css">
+<script src="/assets/js/site.js" defer></script>
+</head>
+<body>
+<div class="mw-page">
+<a class="mw-skip" href="#contenido">Saltar al contenido</a>
+<header class="mw-nav">
+  <div class="mw-wrap mw-nav__bar">
+    <a href="/" class="mw-nav__logo" aria-label="mostrador_, ir al inicio">
+      <span class="ms-brand"><span class="ms-brand__mark" aria-hidden="true">m<b>_</b></span><span class="ms-brand__name" aria-hidden="true">mostrador<b>_</b></span></span>
+    </a>
+    <nav class="mw-nav__links" aria-label="Principal" style="margin-left: auto;">
+      <a class="mw-nav__link" href="/como-funciona/">Cómo funciona</a>
+      <a class="mw-nav__link" href="/funcionalidades/">Funcionalidades</a>
+      <a class="mw-nav__link" href="/casos-de-uso/">Para tu negocio</a>
+      <a class="mw-nav__link" href="/preguntas-frecuentes/">Preguntas</a>
+    </nav>
+    <div class="mw-nav__end">
+      <a class="ms-btn mw-cta" href="/demo/">Solicitar demo</a>
+    </div>
+  </div>
+</header>
+<main id="contenido">
+
+<section class="mw-hero" aria-labelledby="h-top">
+  <div class="mw-wrap mw-split mw-split--top">
+    <div class="mw-stack">
+      <span class="mw-kicker">// Solicitar demo</span>
+      <h1 id="h-top" class="mw-h1">Conoce mostrador_ <em class="mw-accent">en acción</em><span class="mw-cursor" aria-hidden="true">_</span></h1>
+      <p class="mw-lead">Mira cómo un agente de IA contestaría las preguntas de tus clientes por WhatsApp.</p>
+    </div>
+
+    <div class="mw-card" style="padding: 36px; gap: 20px; border: 2px solid var(--ink); box-shadow: 12px 12px 0 var(--signal);">
+      <div data-demo-form-view>
+        <div class="mw-stack-sm" style="margin-bottom: 20px;">
+          <h2 class="mw-h3" style="font-size: 28px; line-height: 34px;">Solicita tu demo</h2>
+          <p class="mw-small">Déjanos tus datos y cuéntanos qué vendes.</p>
+        </div>
+        <div class="ms-notice" role="alert" data-form-error hidden style="margin-bottom: 20px;">
+          <p style="margin: 0 0 4px;"><b>No se envió tu solicitud.</b></p>
+          <p class="mw-p" style="color: var(--ink); font-size: 14px; line-height: 20px;" data-form-error-text>El formulario aún no está conectado a un sistema que reciba solicitudes. Tus datos no se guardaron.</p>
+        </div>
+        <!--
+          INTEGRACIÓN PENDIENTE: no hay un sistema que reciba solicitudes de demo.
+          Cuando exista, pon su URL en data-endpoint. El script enviará los campos como JSON (POST)
+          y solo mostrará la confirmación si la respuesta es 2xx.
+        -->
+        <form class="mw-form" novalidate aria-label="Solicitud de demo" data-demo-form data-endpoint="">
+          <div class="mw-grid mw-cols-2" style="gap: 18px;">
+            <div class="mw-fieldset">
+              <label for="f-nombre">Tu nombre</label>
+              <input id="f-nombre" name="nombre" class="mw-control" type="text" autocomplete="name" aria-describedby="e-nombre" aria-required="true">
+              <p id="e-nombre" class="mw-err" hidden></p>
+            </div>
+            <div class="mw-fieldset">
+              <label for="f-negocio">Tu negocio</label>
+              <input id="f-negocio" name="negocio" class="mw-control" type="text" autocomplete="organization" aria-describedby="e-negocio" aria-required="true">
+              <p id="e-negocio" class="mw-err" hidden></p>
+            </div>
+          </div>
+          <div class="mw-fieldset">
+            <label for="f-contacto">Correo o WhatsApp</label>
+            <input id="f-contacto" name="contacto" class="mw-control" type="text" autocomplete="email" placeholder="tu@correo.com o 10 dígitos" aria-describedby="e-contacto" aria-required="true">
+            <p id="e-contacto" class="mw-err" hidden></p>
+          </div>
+          <div class="mw-fieldset">
+            <label for="f-giro">Giro <span class="mw-opt">(opcional)</span></label>
+            <select id="f-giro" name="giro" class="mw-control">
+              <option value="">Elige uno</option>
+              <option value="ropa">Ropa y calzado</option>
+              <option value="refacciones">Refaccionaria</option>
+              <option value="ferreteria">Ferretería</option>
+              <option value="electronica">Electrónica</option>
+              <option value="distribuidor">Distribuidor o mayorista</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+          <button type="submit" class="ms-btn mw-cta mw-btn-lg" style="width: 100%;">Solicitar demo</button>
+          <p class="mw-small">Solo usaremos tus datos para contactarte sobre la demo.</p>
+        </form>
+      </div>
+      <div class="mw-stack-sm" role="status" data-demo-success hidden>
+        <span class="ms-tag ms-tag--ok" style="align-self: flex-start;">✓ solicitud recibida</span>
+        <h2 class="mw-h3" style="font-size: 28px; line-height: 34px;">Recibimos tu solicitud.</h2>
+        <p class="mw-p">Te contactaremos por el medio que nos dejaste para acordar la demo.</p>
+        <a class="mw-more" href="/" style="align-self: flex-start;">Volver al inicio →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="mw-foot">
+  <div class="mw-wrap">
+    <div class="mw-foot__top">
+      <a href="/" class="mw-nav__logo" aria-label="mostrador_, ir al inicio">
+        <span class="ms-brand"><span class="ms-brand__mark" aria-hidden="true">m<b>_</b></span><span class="ms-brand__name" aria-hidden="true">mostrador<b>_</b></span></span>
+      </a>
+      <nav class="mw-foot__links" aria-label="Sitio">
+        <a href="/como-funciona/">Cómo funciona</a>
+        <a href="/funcionalidades/">Funcionalidades</a>
+        <a href="/casos-de-uso/">Casos de uso</a>
+        <a href="/preguntas-frecuentes/">Preguntas frecuentes</a>
+      </nav>
+      <a class="ms-btn mw-cta" href="/demo/">Solicitar demo</a>
+    </div>
+    <div class="mw-foot__bottom">
+      <span>El encargado virtual que conoce lo que vendes.</span>
+      <span>Conversaciones y productos de este sitio: ejemplos ilustrativos.</span>
+    </div>
+  </div>
+</footer>
+</div>
+</body>
+</html>
