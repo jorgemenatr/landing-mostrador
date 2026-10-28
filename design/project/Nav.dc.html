@@ -25,34 +25,17 @@
     </nav>
     <div class="mw-nav__end">
       <a class="ms-btn mw-cta" href="Demo.dc.html">Solicitar demo</a>
-      <button type="button" class="ms-btn ms-btn--quiet mw-nav__toggle" aria-expanded="{{openStr}}" aria-controls="mw-menu" onClick="{{toggle}}">{{toggleLabel}}</button>
     </div>
   </div>
-  <sc-if value="{{open}}" hint-placeholder-val="{{false}}">
-    <nav id="mw-menu" class="mw-nav__panel" aria-label="Menú">
-      <a class="mw-nav__link" href="Main.dc.html" aria-current="{{cur.inicio}}">Inicio</a>
-      <a class="mw-nav__link" href="ComoFunciona.dc.html" aria-current="{{cur.como}}">Cómo funciona</a>
-      <a class="mw-nav__link" href="Funcionalidades.dc.html" aria-current="{{cur.func}}">Funcionalidades</a>
-      <a class="mw-nav__link" href="CasosDeUso.dc.html" aria-current="{{cur.casos}}">Para tu negocio</a>
-      <a class="mw-nav__link" href="PreguntasFrecuentes.dc.html" aria-current="{{cur.faq}}">Preguntas frecuentes</a>
-    </nav>
-  </sc-if>
 </header>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"current":{"editor":"enum","options":["inicio","como","func","casos","faq","demo"],"default":"inicio"},"$preview":{"width":1440,"height":72}}'>
 class Component extends DCLogic {
   renderVals() {
     const current = this.props.current ?? 'inicio';
-    const open = !!(this.state && this.state.open);
     const cur = {};
     ['inicio', 'como', 'func', 'casos', 'faq', 'demo'].forEach((k) => { cur[k] = k === current ? 'page' : 'false'; });
-    return {
-      cur,
-      open,
-      openStr: open ? 'true' : 'false',
-      toggleLabel: open ? 'cerrar' : 'menú',
-      toggle: () => this.setState({ open: !open }),
-    };
+    return { cur };
   }
 }
 </script>
