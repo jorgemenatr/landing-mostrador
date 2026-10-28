@@ -239,3 +239,22 @@ textarea.mw-control { height: auto; min-height: 88px; padding: 12px 14px; resize
 .mw-page .ms-seg button[aria-pressed="true"] { background: var(--signal); border-color: var(--signal); color: var(--on-ink); }
 .mw-span-2 { grid-column: span 2; }
 @media (max-width: 640px) { .mw-span-2 { grid-column: auto; } }
+
+/* ── Línea de tiempo (cómo funciona) ────────── */
+.mw-timeline { position: relative; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; }
+.mw-timeline::before, .mw-timeline::after { content: ""; position: absolute; left: 10px; right: 0; top: 10px; height: 2px; }
+.mw-timeline::before { background: var(--ink-line); }
+.mw-timeline::after { background: var(--signal-on-ink); transform-origin: left; animation: mw-grow 2.4s cubic-bezier(.2,.8,.2,1) .3s both; }
+.mw-tl { position: relative; z-index: 1; padding-top: 44px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.mw-tl::before { content: ""; position: absolute; top: 0; left: 0; width: 22px; height: 22px; border-radius: var(--radius-full); background: var(--ink); border: 2px solid var(--signal-on-ink); box-sizing: border-box; transition: background .2s, transform .2s; }
+.mw-tl:last-child::before, .mw-tl:hover::before { background: var(--signal-on-ink); transform: scale(1.15); }
+.mw-tl .mw-big { font-size: 40px; line-height: 40px; }
+@keyframes mw-grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@media (max-width: 860px) {
+  .mw-timeline { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+  .mw-timeline::before, .mw-timeline::after { left: 10px; right: auto; top: 0; bottom: 0; width: 2px; height: auto; }
+  .mw-timeline::after { transform-origin: top; animation-name: mw-grow-y; }
+  .mw-tl { padding-top: 0; padding-left: 44px; }
+}
+@keyframes mw-grow-y { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+@media (prefers-reduced-motion: reduce) { .mw-timeline::after { animation: none; } }
