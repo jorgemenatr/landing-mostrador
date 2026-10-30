@@ -47,14 +47,15 @@
         </div>
         <div class="ms-notice" role="alert" data-form-error hidden style="margin-bottom: 20px;">
           <p style="margin: 0 0 4px;"><b>No se envió tu solicitud.</b></p>
-          <p class="mw-p" style="color: var(--ink); font-size: 14px; line-height: 20px;" data-form-error-text>El formulario aún no está conectado a un sistema que reciba solicitudes. Tus datos no se guardaron.</p>
+          <p class="mw-p" style="color: var(--ink); font-size: 14px; line-height: 20px;" data-form-error-text>No pudimos enviar tu solicitud. Revisa tu conexión e inténtalo de nuevo.</p>
         </div>
         <!--
-          INTEGRACIÓN PENDIENTE: no hay un sistema que reciba solicitudes de demo.
-          Cuando exista, pon su URL en data-endpoint. El script enviará los campos como JSON (POST)
-          y solo mostrará la confirmación si la respuesta es 2xx.
+          Netlify Forms: Netlify detecta este formulario al publicar (data-netlify) y guarda cada envío
+          en el panel del sitio (Forms → demo). site.js lo envía por fetch y solo confirma si la respuesta es 2xx.
         -->
-        <form class="mw-form" novalidate aria-label="Solicitud de demo" data-demo-form data-endpoint="">
+        <form class="mw-form" name="demo" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" novalidate aria-label="Solicitud de demo" data-demo-form>
+          <input type="hidden" name="form-name" value="demo">
+          <p hidden><label>No llenes este campo: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
           <div class="mw-grid mw-cols-2" style="gap: 18px;">
             <div class="mw-fieldset">
               <label for="f-nombre">Tu nombre</label>

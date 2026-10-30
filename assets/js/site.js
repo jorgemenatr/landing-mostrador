@@ -181,18 +181,12 @@
       var firstBad = fields.filter(function (n) { return errs[n]; })[0];
       if (firstBad) { form.elements[firstBad].focus(); return; }
 
-      var endpoint = form.getAttribute('data-endpoint');
-      if (!endpoint) {
-        // Sin integración configurada: no se envía ni se guarda nada.
-        showFailure();
-        return;
-      }
-
+      // Netlify Forms recibe el envío como form-urlencoded en la ruta del atributo action.
       submit.disabled = true;
-      fetch(endpoint, {
+      fetch(form.getAttribute('action') || '/', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(values),
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString(),
       }).then(function (res) {
         if (!res.ok) throw new Error('HTTP ' + res.status);
         formView.hidden = true;
@@ -200,7 +194,7 @@
         success.setAttribute('tabindex', '-1');
         success.focus();
       }).catch(function () {
-        showFailure('No pudimos enviar tu solicitud. Revisa tu conexión e inténtalo de nuevo.');
+        showFailure();
       }).then(function () {
         submit.disabled = false;
       });
