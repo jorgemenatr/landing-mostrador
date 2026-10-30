@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Casos de uso — mostrador_</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="ds/mostrador/components/bundle.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:#1b1c1e}a:hover{color:#c8401e}
+</style>
+</helmet>
+<div class="mw-page" style="font-family: var(--font-sans); color: var(--ink); background: var(--surface);">
+<dc-import name="Nav" current="casos" hint-size="100%,72px"></dc-import>
+<main>
+
+<section class="mw-hero" style="padding-bottom: 56px;" aria-labelledby="h-top">
+  <div class="mw-wrap">
+    <div class="mw-head" style="margin-bottom: 0;">
+      <span class="mw-kicker">// Para tu negocio</span>
+      <h1 id="h-top" class="mw-h1">Para negocios que venden <em class="mw-accent">todos los días</em><span class="mw-cursor" aria-hidden="true">_</span></h1>
+      <p class="mw-lead">Elige tu giro: la pregunta, los datos que usa el agente y su respuesta.</p>
+    </div>
+  </div>
+</section>
+
+<section class="mw-sec mw-sec--soft" aria-label="Ejemplos por giro">
+  <div class="mw-wrap">
+    <div class="ms-seg" role="group" aria-label="Elige un giro" style="flex-wrap: wrap; margin-bottom: 32px;">
+      <sc-for list="{{tabs}}" as="t" hint-placeholder-count="5">
+        <button type="button" aria-pressed="{{t.pressed}}" onClick="{{t.pick}}" style="height: 44px; padding: 0 18px; font-size: 14px;">{{t.label}}</button>
+      </sc-for>
+    </div>
+    <div class="mw-grid mw-cols-3" style="gap: 20px; align-items: stretch;">
+      <div class="mw-card" style="border-color: var(--ink);">
+        <span class="mw-kicker">A · Pregunta</span>
+        <p class="mw-h3" style="font-size: 26px; line-height: 32px; margin: 0;">“{{c.q}}”</p>
+      </div>
+      <div class="mw-card mw-card--ink">
+        <span class="mw-kicker" style="color: var(--signal-on-ink);">B · Datos que usa</span>
+        <dl style="margin: 0; display: flex; flex-direction: column; gap: 12px;">
+          <sc-for list="{{c.data}}" as="d" hint-placeholder-count="3">
+            <div><dt style="font: 500 11px/16px var(--font-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--on-ink-muted);">{{d.k}}</dt><dd style="margin: 2px 0 0; font-size: 15px; line-height: 21px;">{{d.v}}</dd></div>
+          </sc-for>
+        </dl>
+      </div>
+      <div class="mw-card" style="border-color: var(--bot);">
+        <span class="mw-kicker" style="color: var(--bot);">C · bot&gt; contesta</span>
+        <p class="mw-p" style="color: var(--bot); font-size: 17px; line-height: 26px;">{{c.a}}</p>
+      </div>
+    </div>
+    <sc-if value="{{c.hasNote}}" hint-placeholder-val="{{false}}">
+      <p class="mw-small" style="margin-top: 16px; color: var(--ink);"><span style="color: var(--signal); font-weight: 700;">//</span> {{c.note}}</p>
+    </sc-if>
+    <p class="mw-illus" style="margin: 16px 0 0;">Ejemplo ilustrativo · productos ficticios</p>
+  </div>
+</section>
+
+<section class="mw-sec mw-sec--red" aria-labelledby="h-cta">
+  <div class="mw-wrap mw-split">
+    <h2 id="h-cta" class="mw-h2">Tu catálogo, <em class="mw-accent">tus respuestas.</em></h2>
+    <div class="mw-stack" style="align-items: flex-start;">
+      <p class="mw-lead">El agente contesta con lo que tienes registrado. En la demo vemos qué conviene tener para tu giro.</p>
+      <div class="mw-actions">
+        <a class="ms-btn mw-cta mw-cta--ink mw-btn-lg" href="Demo.dc.html">Solicitar demo</a>
+        <a class="ms-btn mw-ghost mw-btn-lg" href="PreguntasFrecuentes.dc.html">Preguntas frecuentes</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+<dc-import name="Footer" hint-size="100%,220px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2000}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const CASOS = {
+      ropa: {
+        label: 'Ropa y calzado',
+        q: '¿La chamarra Norte azul la tienes en mediana?',
+        data: [ { k: 'Producto', v: 'Chamarra Norte azul' }, { k: 'Existencia por talla', v: 'CH 2 · M 1 · G 0' }, { k: 'Precio', v: '$1,390.00' } ],
+        a: 'Sí, queda 1 en mediana. Está en $1,390.00.',
+      },
+      refa: {
+        label: 'Refaccionarias',
+        q: '¿Tienen la balata BD-1180? ¿Le queda a mi Versa 2018?',
+        data: [ { k: 'Producto', v: 'Balata delantera cerámica BD-1180' }, { k: 'Compatibilidad', v: 'no registrada' }, { k: 'Precio · hay', v: '$480.00 · 6' } ],
+        a: 'Sí, está en $480.00 y hay 6. Con qué autos es compatible no lo tengo registrado, así que no te lo puedo confirmar.',
+        note: 'mostrador_ no incluye una base de compatibilidades: solo usa las que tengas en tu catálogo.',
+      },
+      ferre: {
+        label: 'Ferreterías',
+        q: '¿Qué medidas de tubo PVC manejan?',
+        data: [ { k: 'Medidas', v: '1/2" y 3/4" · tramo 6 m' }, { k: 'Precio', v: '$78.00 · $112.00' }, { k: 'Hay', v: '40 · 0' } ],
+        a: 'De 1/2" a $78.00, hay 40. De 3/4" a $112.00, pero ahorita no hay.',
+      },
+      electro: {
+        label: 'Electrónica',
+        q: '¿Qué diferencia hay entre la Eco y la Eco Max?',
+        data: [ { k: 'Eco', v: '10 W · resiste salpicaduras · $749.00' }, { k: 'Eco Max', v: '20 W · sumergible · $1,249.00' }, { k: 'Hay', v: '6 · 3' } ],
+        a: 'La Eco es de 10 W y resiste salpicaduras ($749.00). La Eco Max es de 20 W y sumergible ($1,249.00).',
+      },
+      dist: {
+        label: 'Distribuidores',
+        q: '¿Cuántas piezas trae la caja del aceite 1 L?',
+        data: [ { k: 'Presentación', v: 'caja con 12 piezas' }, { k: 'Precio', v: '$1,560.00 la caja' }, { k: 'Hay', v: '18 cajas' } ],
+        a: 'Trae 12 piezas, está en $1,560.00 la caja y tenemos 18.',
+      },
+    };
+    const sel = (this.state && this.state.sel) || 'ropa';
+    const cur = CASOS[sel];
+    const c = { q: cur.q, a: cur.a, data: cur.data, hasNote: !!cur.note, note: cur.note || '' };
+    const tabs = Object.keys(CASOS).map((k) => ({
+      label: CASOS[k].label,
+      pressed: k === sel ? 'true' : 'false',
+      pick: () => this.setState({ sel: k }),
+    }));
+    return { c, tabs };
+  }
+}
+</script>
+</body>
+</html>

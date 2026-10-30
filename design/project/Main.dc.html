@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>mostrador_ — Inicio</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="ds/mostrador/components/bundle.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:#1b1c1e}a:hover{color:#c8401e}
+</style>
+</helmet>
+<div class="mw-page" style="font-family: var(--font-sans); color: var(--ink); background: var(--surface);">
+<dc-import name="Nav" current="inicio" hint-size="100%,72px"></dc-import>
+<main>
+
+<!-- Héroe -->
+<section class="mw-hero" aria-labelledby="h-hero">
+  <div class="mw-wrap mw-split">
+    <div class="mw-stack" style="gap: 28px;">
+      <h1 id="h-hero" class="mw-h1">Tu encargado de mostrador, ahora también en <em class="mw-accent">WhatsApp</em><span class="mw-cursor" aria-hidden="true">_</span></h1>
+      <p class="mw-lead">Un agente de IA que conoce tu inventario y contesta a tus clientes por WhatsApp: precios, existencias y apartados.</p>
+      <div class="mw-actions">
+        <a class="ms-btn mw-cta mw-btn-lg" href="Demo.dc.html">Solicitar demo</a>
+        <a class="ms-btn mw-ghost mw-btn-lg" href="#demo">Ver cómo atiende</a>
+      </div>
+    </div>
+    <figure class="mw-hero__vis" style="margin: 0;" aria-label="Ejemplo ilustrativo: el agente usa el catálogo para contestar por WhatsApp">
+      <div class="mw-device mw-hero__chat">
+        <div class="mw-device__bar"><span><b>•</b> WhatsApp · Zapatería de ejemplo</span><span>ilustrativo</span></div>
+        <div class="mw-device__body ms-transcript mw-chat">
+          <div class="ms-msg mw-pop mw-d1"><div class="ms-msg__bubble">¿tienen los tenis Brisa en 27?</div><span class="ms-msg__meta">11:02</span></div>
+          <div class="ms-msg ms-msg--ours ms-msg--bot mw-pop mw-d2"><div class="ms-msg__bubble">Sí, en blanco hay 3 pares en 27. Están en $1,149.00.</div><span class="ms-msg__meta"><b>bot</b> · 11:02</span></div>
+          <div class="ms-msg mw-pop mw-d3"><div class="ms-msg__bubble">¿me apartas unos?</div><span class="ms-msg__meta">11:03</span></div>
+          <div class="ms-msg ms-msg--ours ms-msg--bot mw-pop mw-d4"><div class="ms-msg__bubble">Listo, quedó registrado con el código R-4K7M.</div><span class="ms-msg__meta"><b>bot</b> · 11:03</span></div>
+        </div>
+      </div>
+      <div class="mw-device mw-hero__cat">
+        <div class="mw-device__bar"><span>Tu catálogo</span><span>214 productos</span></div>
+        <div class="mw-tbl">
+          <div class="mw-tbl__row mw-tbl__row--used" style="border-top: 0;">
+            <div><div class="ms-table__name">Tenis Brisa blanco</div><div class="mw-used">bot&gt; usó este producto</div></div>
+            <div class="mw-tbl__num">$1,149.00</div>
+            <div class="mw-tbl__num">3<small>talla 27</small></div>
+          </div>
+          <div class="mw-tbl__row">
+            <div><div class="ms-table__name">Tenis Brisa negro</div></div>
+            <div class="mw-tbl__num">$1,149.00</div>
+            <div class="mw-tbl__num">0<small>talla 27</small></div>
+          </div>
+        </div>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- El problema, en una cinta -->
+<section class="mw-sec--ink" style="padding: 72px 0 0;" aria-labelledby="h-problema">
+  <div class="mw-wrap" style="display: flex; flex-direction: column; align-items: flex-start; gap: 16px; padding-bottom: 40px;">
+    <span class="mw-kicker">// Lo de todos los días</span>
+    <h2 id="h-problema" class="mw-h2" style="max-width: 760px;">Cada mensaje es una <em class="mw-accent">oportunidad de venta.</em></h2>
+    <p class="mw-lead" style="max-width: 560px;">Cuando el equipo está ocupado, el whatsapp no se contesta. Los clientes no tienen tanta paciencia.</p>
+  </div>
+  <div class="mw-ticker" aria-label="Preguntas típicas de clientes">
+    <div class="mw-ticker__track"><span class="mw-ticker__item">¿cuánto cuesta?</span><span class="mw-ticker__item" style="position: relative">¿lo tienen en talla 27?</span><span class="mw-ticker__item">¿hay en negro?</span><span class="mw-ticker__item">¿de qué material es?</span><span class="mw-ticker__item">¿todavía tienen el que publicaron?</span><span class="mw-ticker__item">¿me lo apartas?</span><span class="mw-ticker__item">¿qué medida es?</span><span class="mw-ticker__item">¿cuál me recomiendas?</span>
+      <span class="mw-ticker__item" aria-hidden="true">¿cuánto cuesta?</span><span class="mw-ticker__item" aria-hidden="true">¿lo tienen en 27?</span><span class="mw-ticker__item" aria-hidden="true">¿hay en negro?</span><span class="mw-ticker__item" aria-hidden="true">¿de qué material es?</span><span class="mw-ticker__item" aria-hidden="true">¿todavía tienen el que publicaron?</span><span class="mw-ticker__item" aria-hidden="true">¿me lo apartas?</span><span class="mw-ticker__item" aria-hidden="true">¿qué medida es?</span><span class="mw-ticker__item" aria-hidden="true">¿cuál me recomiendas?</span>
+    </div>
+  </div>
+  <div style="height: 72px;"></div>
+</section>
+
+<!-- La solución -->
+<section class="mw-sec" aria-labelledby="h-solucion">
+  <div class="mw-wrap">
+    <div class="mw-head">
+      <span class="mw-kicker">// La solución</span>
+      <h2 id="h-solucion" class="mw-h2">Un encargado virtual que <em class="mw-accent">conoce lo que vendes.</em></h2>
+    </div>
+    <div class="mw-grid mw-cols-3" style="gap: 20px;">
+      <article class="mw-card mw-card--hover">
+        <span class="mw-big">01</span>
+        <h3 class="mw-h3">Conoce tus productos</h3>
+        <p class="mw-p">Contesta sólo con la información que se cargó en tu inventario.</p>
+      </article>
+      <article class="mw-card mw-card--hover">
+        <span class="mw-big">02</span>
+        <h3 class="mw-h3">Comparte detalles y precio</h3>
+        <p class="mw-p">Atiende todo el día, toda la noche o en el horario que tú definas.</p>
+      </article>
+      <article class="mw-card mw-card--hover">
+        <span class="mw-big">03</span>
+        <h3 class="mw-h3">Ayuda a cerrar</h3>
+        <p class="mw-p">Registra apartados cuando el cliente lo autoriza y tus reglas lo permiten.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Demostración -->
+<section id="demo" class="mw-sec mw-sec--soft mw-anchor" aria-labelledby="h-demo">
+  <div class="mw-wrap">
+    <div class="mw-head">
+      <span class="mw-kicker">// Pruébalo</span>
+      <h2 id="h-demo" class="mw-h2">Así atendería a <em class="mw-accent">tus clientes.</em></h2>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin-bottom: 24px;">
+    <div class="ms-seg" role="group" aria-label="Elige un ejemplo" style="flex-wrap: wrap;">
+      <sc-for list="{{tabs}}" as="t" hint-placeholder-count="3">
+        <button type="button" aria-pressed="{{t.pressed}}" onClick="{{t.pick}}" style="height: 44px; padding: 0 18px; font-size: 14px;">{{t.label}}</button>
+      </sc-for>
+    </div>
+    <p class="mw-p" style="margin-left: auto; text-align: right;">Elige un giro. Son conversaciones de ejemplo, no el servicio real.</p>
+    </div>
+    <div class="mw-split mw-split--top" style="gap: 24px;">
+      <div class="mw-device">
+        <div class="mw-device__bar"><span>Catálogo · {{esc.tienda}}</span><span>ficticio</span></div>
+        <div class="mw-tbl">
+          <div class="mw-tbl__head"><span>Producto</span><span>Precio</span><span>Hay</span></div>
+          <sc-for list="{{esc.rows}}" as="r" hint-placeholder-count="3">
+            <div class="{{r.cls}}">
+              <div>
+                <div class="ms-table__name">{{r.n}}</div>
+                <div class="ms-table__sub">{{r.d}}</div>
+                <sc-if value="{{r.used}}" hint-placeholder-val="{{false}}"><div class="mw-used">bot&gt; usó estos datos</div></sc-if>
+              </div>
+              <div class="mw-tbl__num">{{r.p}}</div>
+              <div class="mw-tbl__num">{{r.s}}<small>{{r.sn}}</small></div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div class="mw-device">
+        <div class="mw-device__bar"><span><b>•</b> WhatsApp</span><span>ilustrativo</span></div>
+        <div class="mw-device__body ms-transcript mw-chat" aria-live="polite" style="min-height: 360px;">
+          <sc-if value="{{show.ropa}}" hint-placeholder-val="{{true}}">
+            <sc-for list="{{esc.msgs}}" as="m" hint-placeholder-count="4">
+              <div class="{{m.cls}}"><div class="ms-msg__bubble">{{m.t}}</div><span class="ms-msg__meta">{{m.meta}}</span></div>
+            </sc-for>
+          </sc-if>
+          <sc-if value="{{show.ferre}}" hint-placeholder-val="{{false}}">
+            <sc-for list="{{esc.msgs}}" as="m" hint-placeholder-count="4">
+              <div class="{{m.cls}}"><div class="ms-msg__bubble">{{m.t}}</div><span class="ms-msg__meta">{{m.meta}}</span></div>
+            </sc-for>
+          </sc-if>
+          <sc-if value="{{show.electro}}" hint-placeholder-val="{{false}}">
+            <sc-for list="{{esc.msgs}}" as="m" hint-placeholder-count="4">
+              <div class="{{m.cls}}"><div class="ms-msg__bubble">{{m.t}}</div><span class="ms-msg__meta">{{m.meta}}</span></div>
+            </sc-for>
+          </sc-if>
+        </div>
+      </div>
+    </div>
+    <div class="mw-actions" style="margin-top: 32px; justify-content: space-between;">
+      <p class="mw-small" style="color: var(--ink); font-size: 15px; line-height: 22px"><span style="color: var(--signal); font-family: var(--font-mono); font-weight: 700;">// </span>{{esc.nota}}</p>
+      <a class="ms-btn mw-cta mw-btn-lg" href="Demo.dc.html" style="margin-left: auto;">Ver una demo</a>
+    </div>
+  </div>
+</section>
+
+<!-- Cómo funciona -->
+<section id="como-funciona" class="mw-sec mw-sec--ink mw-anchor" aria-labelledby="h-como">
+  <div class="mw-wrap">
+    <div class="mw-head">
+      <span class="mw-kicker">// Cómo funciona</span>
+      <h2 id="h-como" class="mw-h2">Cuatro pasos. <em class="mw-accent">Cero código.</em></h2>
+    </div>
+    <ol class="mw-timeline" aria-label="Pasos">
+      <li class="mw-tl"><span class="mw-big">01</span><h3 class="mw-h3">Carga tu inventario</h3><p class="mw-p">Productos, precios y existencias.</p></li>
+      <li class="mw-tl"><span class="mw-big">02</span><h3 class="mw-h3">Configura tu agente</h3><p class="mw-p">Define cómo atiende a tus clientes.</p></li>
+      <li class="mw-tl"><span class="mw-big">03</span><h3 class="mw-h3">Atiende por WhatsApp</h3><p class="mw-p">Contesta con tu información.</p></li>
+      <li class="mw-tl"><span class="mw-big">04</span><h3 class="mw-h3">Avanza a la venta</h3><p class="mw-p">Y registra apartados autorizados.</p></li>
+    </ol>
+    <div class="mw-actions" style="margin-top: 56px;">
+      <a class="ms-btn mw-cta mw-btn-lg" href="Demo.dc.html">Solicitar demo</a>
+    </div>
+  </div>
+</section>
+
+<!-- Confianza -->
+<section class="mw-sec mw-sec--line" aria-labelledby="h-confianza">
+  <div class="mw-wrap">
+    <div class="mw-head">
+      <span class="mw-kicker">// Confianza</span>
+      <h2 id="h-confianza" class="mw-h2">Responde con <em class="mw-accent">la información de tu negocio.</em></h2>
+    </div>
+    <div class="mw-grid mw-cols-4" style="gap: 32px;">
+      <div class="mw-rule"><span class="mw-rule__k">No inventa</span><p class="mw-p">Si falta un dato, lo dice.</p></div>
+      <div class="mw-rule"><span class="mw-rule__k">Precios exactos</span><p class="mw-p">Tal como los tienes registrados.</p></div>
+      <div class="mw-rule"><span class="mw-rule__k">Aparta con permiso</span><p class="mw-p">Solo si el cliente autoriza y tus reglas lo permiten.</p></div>
+      <div class="mw-rule"><span class="mw-rule__k">Claro cuando no sabe</span><p class="mw-p">No improvisa fuera de lo que conoce.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Cierre -->
+<section class="mw-sec mw-sec--red" aria-labelledby="h-cierre">
+  <div class="mw-wrap mw-split">
+    <h2 id="h-cierre" class="mw-h2">Dale a tus clientes otra forma de encontrar lo que buscan<span class="mw-cursor" style="color: var(--ink);" aria-hidden="true">_</span></h2>
+    <div class="mw-stack" style="align-items: flex-start;">
+      <p class="mw-lead">Te mostramos cómo funcionaría con productos como los tuyos.</p>
+      <div class="mw-actions">
+        <a class="ms-btn mw-cta mw-cta--ink mw-btn-lg" href="Demo.dc.html">Solicitar demo</a>
+        <a class="ms-btn mw-ghost mw-btn-lg" href="ComoFunciona.dc.html">Conocer cómo funciona</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+<dc-import name="Footer" hint-size="100%,220px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":5600}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const ESC = {
+      ropa: {
+        label: 'Ropa y calzado', tienda: 'Zapatería de ejemplo',
+        nota: 'Contesta talla, precio y existencia del catálogo.',
+        rows: [
+          { n: 'Tenis Brisa blanco', d: 'piel sintética · tallas 25 a 28', p: '$1,149.00', s: '3', sn: 'talla 27', used: true },
+          { n: 'Tenis Brisa negro', d: 'piel sintética · tallas 25 a 28', p: '$1,149.00', s: '0', sn: 'talla 27', used: true },
+          { n: 'Sandalia Marea café', d: 'piel · tallas 23 a 26', p: '$649.00', s: '8', sn: 'total', used: false },
+        ],
+        msgs: [
+          { k: 'c', t: '¿tienen los Brisa en 27?', h: '11:02' },
+          { k: 'b', t: 'En blanco sí, hay 3 pares. Están en $1,149.00. En negro ya no hay en 27.', h: '11:02' },
+          { k: 'c', t: '¿de qué material son?', h: '11:03' },
+          { k: 'b', t: 'Piel sintética con suela de hule.', h: '11:03' },
+        ],
+      },
+      ferre: {
+        label: 'Ferretería', tienda: 'Ferretería de ejemplo',
+        nota: 'Recomienda con lo que dice cada ficha.',
+        rows: [
+          { n: 'Taladro percutor 1/2" 650 W', d: 'madera, metal y concreto', p: '$1,289.00', s: '5', sn: 'en tienda', used: true },
+          { n: 'Brocas para concreto', d: 'juego de 5', p: '$189.00', s: '12', sn: 'en tienda', used: true },
+          { n: 'Taladro inalámbrico 20 V', d: 'sin batería ni cargador', p: '$1,890.00', s: '2', sn: 'en tienda', used: false },
+        ],
+        msgs: [
+          { k: 'c', t: '¿tienen taladro para concreto?', h: '16:18' },
+          { k: 'b', t: 'El percutor de 1/2" y 650 W sirve para concreto. Está en $1,289.00 y hay 5.', h: '16:18' },
+          { k: 'c', t: '¿y brocas?', h: '16:19' },
+          { k: 'b', t: 'El juego de 5 brocas para concreto está en $189.00. Hay 12.', h: '16:19' },
+        ],
+      },
+      electro: {
+        label: 'Electrónica', tienda: 'Electrónica de ejemplo',
+        nota: 'Si el catálogo no tiene el dato, lo dice.',
+        rows: [
+          { n: 'Audífonos Pulso', d: 'Bluetooth 5.3 · hasta 30 h', p: '$899.00', s: '4', sn: 'en tienda', used: true },
+          { n: 'Audífonos Pulso Sport', d: 'resistentes al sudor', p: '$1,099.00', s: '0', sn: 'en tienda', used: true },
+          { n: 'Cargador USB-C 20 W', d: 'un puerto', p: '$299.00', s: '9', sn: 'en tienda', used: false },
+        ],
+        msgs: [
+          { k: 'c', t: '¿los Pulso Sport sirven para nadar?', h: '17:40' },
+          { k: 'b', t: 'La ficha dice resistentes al sudor, nada de agua. No te lo puedo asegurar.', h: '17:40' },
+          { k: 'c', t: '¿y los Pulso normales?', h: '17:41' },
+          { k: 'b', t: 'Hasta 30 h de batería, en $899.00. Hay 4.', h: '17:41' },
+        ],
+      },
+    };
+    const sel = (this.state && this.state.esc) || 'ropa';
+    const cur = ESC[sel];
+    const esc = {
+      tienda: cur.tienda,
+      nota: cur.nota,
+      rows: cur.rows.map((r) => ({ ...r, cls: r.used ? 'mw-tbl__row mw-tbl__row--used' : 'mw-tbl__row' })),
+      msgs: cur.msgs.map((m, i) => ({
+        t: m.t,
+        meta: m.k === 'b' ? 'bot · ' + m.h : m.h,
+        cls: (m.k === 'b' ? 'ms-msg ms-msg--ours ms-msg--bot' : 'ms-msg') + ' mw-pop mw-d' + (i + 1),
+      })),
+    };
+    const show = { ropa: sel === 'ropa', ferre: sel === 'ferre', electro: sel === 'electro' };
+    const tabs = Object.keys(ESC).map((k) => ({
+      label: ESC[k].label,
+      pressed: k === sel ? 'true' : 'false',
+      pick: () => this.setState({ esc: k }),
+    }));
+    return { esc, tabs, show };
+  }
+}
+</script>
+</body>
+</html>

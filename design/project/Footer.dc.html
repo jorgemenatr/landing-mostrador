@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Footer</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="ds/mostrador/components/bundle.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>body{margin:0}</style>
+</helmet>
+<footer class="mw-foot" style="font-family: var(--font-sans); color: var(--on-ink); background: var(--ink);">
+  <div class="mw-wrap">
+    <div class="mw-foot__top">
+      <a href="Main.dc.html" class="mw-nav__logo" aria-label="mostrador_, ir al inicio">
+        <span class="ms-brand"><span class="ms-brand__mark" aria-hidden="true">m<b>_</b></span><span class="ms-brand__name" aria-hidden="true">mostrador<b>_</b></span></span>
+      </a>
+      <nav class="mw-foot__links" aria-label="Sitio">
+        <a href="ComoFunciona.dc.html">Cómo funciona</a>
+        <a href="Funcionalidades.dc.html">Funcionalidades</a>
+        <a href="CasosDeUso.dc.html">Casos de uso</a>
+        <a href="PreguntasFrecuentes.dc.html">Preguntas frecuentes</a>
+      </nav>
+      <a class="ms-btn mw-cta" href="Demo.dc.html">Solicitar demo</a>
+    </div>
+    <div class="mw-foot__bottom">
+      <span>El encargado virtual que conoce lo que vendes.</span>
+      <span>Conversaciones y productos de este sitio: ejemplos ilustrativos.</span>
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":220}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

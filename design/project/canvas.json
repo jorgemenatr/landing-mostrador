@@ -1,0 +1,149 @@
+{
+  "v": 3,
+  "attachments": {},
+  "boards": {
+    "CasosDeUso.dc.html": {
+      "expand": "fill",
+      "h": 2000,
+      "is_interactive": true,
+      "title": "/casos-de-uso",
+      "w": 1440,
+      "x": 4560,
+      "y": 0
+    },
+    "ComoFunciona.dc.html": {
+      "expand": "fill",
+      "h": 3000,
+      "is_interactive": true,
+      "title": "/como-funciona",
+      "w": 1440,
+      "x": 1520,
+      "y": 0
+    },
+    "Demo.dc.html": {
+      "expand": "fill",
+      "h": 1300,
+      "is_interactive": true,
+      "title": "/demo",
+      "w": 1440,
+      "x": 7600,
+      "y": 0
+    },
+    "Footer.dc.html": {
+      "h": 220,
+      "title": "Componente · Footer",
+      "w": 1440,
+      "x": 1520,
+      "y": -700
+    },
+    "Funcionalidades.dc.html": {
+      "expand": "fill",
+      "h": 2800,
+      "is_interactive": true,
+      "title": "/funcionalidades",
+      "w": 1440,
+      "x": 3040,
+      "y": 0
+    },
+    "Main.dc.html": {
+      "expand": "fill",
+      "h": 5600,
+      "is_interactive": true,
+      "title": "/ — Inicio",
+      "w": 1440,
+      "x": 0,
+      "y": 0
+    },
+    "Nav.dc.html": {
+      "h": 72,
+      "is_interactive": true,
+      "title": "Componente · Navegación",
+      "w": 1440,
+      "x": 0,
+      "y": -700
+    },
+    "PreguntasFrecuentes.dc.html": {
+      "expand": "fill",
+      "h": 1500,
+      "is_interactive": true,
+      "title": "/preguntas-frecuentes",
+      "w": 1440,
+      "x": 6080,
+      "y": 0
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-10-27T16:40:00Z",
+    "v": 1
+  },
+  "designSystems": [
+    {
+      "artifact": "https://claude.ai/code/artifact/73ceeba7-e71e-43b5-9d76-64ae352ea2a6",
+      "copiedAt": "2026-10-27T16:40:00Z",
+      "namespace": "mostrador",
+      "title": "mostrador_",
+      "version": "1793038293-5247"
+    }
+  ],
+  "launch": {
+    "view": "canvas"
+  },
+  "noteOrder": [
+    "titleShared",
+    "titlePages",
+    "pendDemo",
+    "pendRutas",
+    "pendConfirmar"
+  ],
+  "notes": {
+    "pendConfirmar": {
+      "fill": "blue",
+      "text": "POR CONFIRMAR con el producto\n\n• Formas de cargar el inventario (archivo, captura, integración).\n• Opciones reales de configuración del agente.\n• Si el equipo puede tomar una conversación desde el panel (el design system lo muestra, pero no se afirma en el sitio).\n• Reglas de apartado: vigencia, confirmación en tienda.",
+      "w": 360,
+      "x": 9120,
+      "y": 1040
+    },
+    "pendDemo": {
+      "fill": "orange",
+      "text": "PENDIENTE · Integración de demo\n\nEl formulario de /demo valida los campos, pero no hay un sistema que reciba solicitudes (no existe endpoint, CRM, calendario ni contacto confirmado). Por eso, al enviar, muestra un error honesto y no guarda nada.\n\nFalta definir: a dónde llega la solicitud, quién la atiende y qué datos se necesitan. La vista de confirmación solo debe mostrarse después de un envío real (Tweaks › vista).",
+      "w": 360,
+      "x": 9120,
+      "y": 0
+    },
+    "pendRutas": {
+      "fill": "gray",
+      "text": "PENDIENTE · Rutas no incluidas\n\n/login y /registro: no hay una app existente en el repo para reutilizar.\n/privacidad y /terminos: no se entregaron los textos legales.\n\nEl footer no enlaza a ellas hasta tener destinos reales. Tampoco hay página de precios: faltan planes confirmados.",
+      "w": 360,
+      "x": 9120,
+      "y": 560
+    },
+    "titlePages": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Páginas del sitio",
+      "w": 240,
+      "x": 0,
+      "y": -260
+    },
+    "titleShared": {
+      "kind": "title1",
+      "maxW": 2960,
+      "text": "Componentes compartidos",
+      "w": 240,
+      "x": 0,
+      "y": -960
+    }
+  },
+  "order": [
+    "Main.dc.html",
+    "ComoFunciona.dc.html",
+    "Funcionalidades.dc.html",
+    "CasosDeUso.dc.html",
+    "PreguntasFrecuentes.dc.html",
+    "Demo.dc.html",
+    "Nav.dc.html",
+    "Footer.dc.html"
+  ],
+  "pages": [],
+  "title": "Sitio web Mostrador"
+}

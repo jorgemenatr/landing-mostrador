@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Casos de uso · mostrador_</title>
+<meta name="description" content="Ejemplos para ropa y calzado, refaccionarias, ferreterías, electrónica y distribuidores.">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/css/mostrador-ds.css">
+<link rel="stylesheet" href="/assets/css/site.css">
+<script src="/assets/js/site.js" defer></script>
+</head>
+<body>
+<div class="mw-page">
+<a class="mw-skip" href="#contenido">Saltar al contenido</a>
+<header class="mw-nav">
+  <div class="mw-wrap mw-nav__bar">
+    <a href="/" class="mw-nav__logo" aria-label="mostrador_, ir al inicio">
+      <span class="ms-brand"><span class="ms-brand__mark" aria-hidden="true">m<b>_</b></span><span class="ms-brand__name" aria-hidden="true">mostrador<b>_</b></span></span>
+    </a>
+    <nav class="mw-nav__links" aria-label="Principal" style="margin-left: auto;">
+      <a class="mw-nav__link" href="/como-funciona/">Cómo funciona</a>
+      <a class="mw-nav__link" href="/funcionalidades/">Funcionalidades</a>
+      <a class="mw-nav__link" href="/casos-de-uso/" aria-current="page">Para tu negocio</a>
+      <a class="mw-nav__link" href="/preguntas-frecuentes/">Preguntas</a>
+    </nav>
+    <div class="mw-nav__end">
+      <a class="ms-btn mw-cta" href="/demo/">Solicitar demo</a>
+    </div>
+  </div>
+</header>
+<main id="contenido">
+
+<section class="mw-hero" style="padding-bottom: 56px;" aria-labelledby="h-top">
+  <div class="mw-wrap">
+    <div class="mw-head" style="margin-bottom: 0;">
+      <span class="mw-kicker">// Para tu negocio</span>
+      <h1 id="h-top" class="mw-h1">Para negocios que venden <em class="mw-accent">todos los días</em><span class="mw-cursor" aria-hidden="true">_</span></h1>
+      <p class="mw-lead">Elige tu giro: la pregunta, los datos que usa el agente y su respuesta.</p>
+    </div>
+  </div>
+</section>
+
+<section class="mw-sec mw-sec--soft" aria-label="Ejemplos por giro">
+  <div class="mw-wrap">
+    <div class="ms-seg" role="group" aria-label="Elige un giro" style="flex-wrap: wrap; margin-bottom: 32px;" data-casos-tabs>
+<button type="button" aria-pressed="true" data-key="ropa" style="height: 44px; padding: 0 18px; font-size: 14px;">Ropa y calzado</button>
+<button type="button" aria-pressed="false" data-key="refa" style="height: 44px; padding: 0 18px; font-size: 14px;">Refaccionarias</button>
+<button type="button" aria-pressed="false" data-key="ferre" style="height: 44px; padding: 0 18px; font-size: 14px;">Ferreterías</button>
+<button type="button" aria-pressed="false" data-key="electro" style="height: 44px; padding: 0 18px; font-size: 14px;">Electrónica</button>
+<button type="button" aria-pressed="false" data-key="dist" style="height: 44px; padding: 0 18px; font-size: 14px;">Distribuidores</button>
+</div>
+    <div class="mw-grid mw-cols-3" style="gap: 20px; align-items: stretch;" aria-live="polite">
+      <div class="mw-card" style="border-color: var(--ink);">
+        <span class="mw-kicker">A · Pregunta</span>
+        <p class="mw-h3" style="font-size: 26px; line-height: 32px; margin: 0;">“<span data-caso="q">¿La chamarra Norte azul la tienes en mediana?</span>”</p>
+      </div>
+      <div class="mw-card mw-card--ink">
+        <span class="mw-kicker" style="color: var(--signal-on-ink);">B · Datos que usa</span>
+        <dl style="margin: 0; display: flex; flex-direction: column; gap: 12px;" data-caso="data">
+<div><dt style="font: 500 11px/16px var(--font-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--on-ink-muted);">Producto</dt><dd style="margin: 2px 0 0; font-size: 15px; line-height: 21px;">Chamarra Norte azul</dd></div>
+<div><dt style="font: 500 11px/16px var(--font-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--on-ink-muted);">Existencia por talla</dt><dd style="margin: 2px 0 0; font-size: 15px; line-height: 21px;">CH 2 · M 1 · G 0</dd></div>
+<div><dt style="font: 500 11px/16px var(--font-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--on-ink-muted);">Precio</dt><dd style="margin: 2px 0 0; font-size: 15px; line-height: 21px;">$1,390.00</dd></div>
+</dl>
+      </div>
+      <div class="mw-card" style="border-color: var(--bot);">
+        <span class="mw-kicker" style="color: var(--bot);">C · bot&gt; contesta</span>
+        <p class="mw-p" style="color: var(--bot); font-size: 17px; line-height: 26px;"><span data-caso="a">Sí, queda 1 en mediana. Está en $1,390.00.</span></p>
+      </div>
+    </div>
+    <p class="mw-small" style="margin-top: 16px; color: var(--ink);" data-caso="note-wrap" hidden><span style="color: var(--signal); font-weight: 700;">//</span> <span data-caso="note"></span></p>
+    <p class="mw-illus" style="margin: 16px 0 0;">Ejemplo ilustrativo · productos ficticios</p>
+  </div>
+</section>
+
+<section class="mw-sec mw-sec--red" aria-labelledby="h-cta">
+  <div class="mw-wrap mw-split">
+    <h2 id="h-cta" class="mw-h2">Tu catálogo, <em class="mw-accent">tus respuestas.</em></h2>
+    <div class="mw-stack" style="align-items: flex-start;">
+      <p class="mw-lead">El agente contesta con lo que tienes registrado. En la demo vemos qué conviene tener para tu giro.</p>
+      <div class="mw-actions">
+        <a class="ms-btn mw-cta mw-cta--ink mw-btn-lg" href="/demo/">Solicitar demo</a>
+        <a class="ms-btn mw-ghost mw-btn-lg" href="/preguntas-frecuentes/">Preguntas frecuentes</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script type="application/json" id="casos-data">{"ropa": {"label": "Ropa y calzado", "q": "¿La chamarra Norte azul la tienes en mediana?", "data": [{"k": "Producto", "v": "Chamarra Norte azul"}, {"k": "Existencia por talla", "v": "CH 2 · M 1 · G 0"}, {"k": "Precio", "v": "$1,390.00"}], "a": "Sí, queda 1 en mediana. Está en $1,390.00."}, "refa": {"label": "Refaccionarias", "q": "¿Tienen la balata BD-1180? ¿Le queda a mi Versa 2018?", "data": [{"k": "Producto", "v": "Balata delantera cerámica BD-1180"}, {"k": "Compatibilidad", "v": "no registrada"}, {"k": "Precio · hay", "v": "$480.00 · 6"}], "a": "Sí, está en $480.00 y hay 6. Con qué autos es compatible no lo tengo registrado, así que no te lo puedo confirmar.", "note": "mostrador_ no incluye una base de compatibilidades: solo usa las que tengas en tu catálogo."}, "ferre": {"label": "Ferreterías", "q": "¿Qué medidas de tubo PVC manejan?", "data": [{"k": "Medidas", "v": "1/2\" y 3/4\" · tramo 6 m"}, {"k": "Precio", "v": "$78.00 · $112.00"}, {"k": "Hay", "v": "40 · 0"}], "a": "De 1/2\" a $78.00, hay 40. De 3/4\" a $112.00, pero ahorita no hay."}, "electro": {"label": "Electrónica", "q": "¿Qué diferencia hay entre la Eco y la Eco Max?", "data": [{"k": "Eco", "v": "10 W · resiste salpicaduras · $749.00"}, {"k": "Eco Max", "v": "20 W · sumergible · $1,249.00"}, {"k": "Hay", "v": "6 · 3"}], "a": "La Eco es de 10 W y resiste salpicaduras ($749.00). La Eco Max es de 20 W y sumergible ($1,249.00)."}, "dist": {"label": "Distribuidores", "q": "¿Cuántas piezas trae la caja del aceite 1 L?", "data": [{"k": "Presentación", "v": "caja con 12 piezas"}, {"k": "Precio", "v": "$1,560.00 la caja"}, {"k": "Hay", "v": "18 cajas"}], "a": "Trae 12 piezas, está en $1,560.00 la caja y tenemos 18."}}</script>
+</main>
+<footer class="mw-foot">
+  <div class="mw-wrap">
+    <div class="mw-foot__top">
+      <a href="/" class="mw-nav__logo" aria-label="mostrador_, ir al inicio">
+        <span class="ms-brand"><span class="ms-brand__mark" aria-hidden="true">m<b>_</b></span><span class="ms-brand__name" aria-hidden="true">mostrador<b>_</b></span></span>
+      </a>
+      <nav class="mw-foot__links" aria-label="Sitio">
+        <a href="/como-funciona/">Cómo funciona</a>
+        <a href="/funcionalidades/">Funcionalidades</a>
+        <a href="/casos-de-uso/">Casos de uso</a>
+        <a href="/preguntas-frecuentes/">Preguntas frecuentes</a>
+      </nav>
+      <a class="ms-btn mw-cta" href="/demo/">Solicitar demo</a>
+    </div>
+    <div class="mw-foot__bottom">
+      <span>El encargado virtual que conoce lo que vendes.</span>
+      <span>Conversaciones y productos de este sitio: ejemplos ilustrativos.</span>
+    </div>
+  </div>
+</footer>
+</div>
+</body>
+</html>

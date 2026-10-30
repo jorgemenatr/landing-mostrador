@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Navegación</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="ds/mostrador/components/bundle.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>body{margin:0}</style>
+</helmet>
+<header class="mw-nav" style="font-family: var(--font-sans); color: var(--ink);">
+  <div class="mw-wrap mw-nav__bar">
+    <a href="Main.dc.html" class="mw-nav__logo" aria-label="mostrador_, ir al inicio">
+      <span class="ms-brand"><span class="ms-brand__mark" aria-hidden="true">m<b>_</b></span><span class="ms-brand__name" aria-hidden="true">mostrador<b>_</b></span></span>
+    </a>
+    <nav class="mw-nav__links" aria-label="Principal" style="margin-left: auto;">
+      <a class="mw-nav__link" href="ComoFunciona.dc.html" aria-current="{{cur.como}}">Cómo funciona</a>
+      <a class="mw-nav__link" href="Funcionalidades.dc.html" aria-current="{{cur.func}}">Funcionalidades</a>
+      <a class="mw-nav__link" href="CasosDeUso.dc.html" aria-current="{{cur.casos}}">Para tu negocio</a>
+      <a class="mw-nav__link" href="PreguntasFrecuentes.dc.html" aria-current="{{cur.faq}}">Preguntas</a>
+    </nav>
+    <div class="mw-nav__end">
+      <a class="ms-btn mw-cta" href="Demo.dc.html">Solicitar demo</a>
+    </div>
+  </div>
+</header>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"current":{"editor":"enum","options":["inicio","como","func","casos","faq","demo"],"default":"inicio"},"$preview":{"width":1440,"height":72}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const current = this.props.current ?? 'inicio';
+    const cur = {};
+    ['inicio', 'como', 'func', 'casos', 'faq', 'demo'].forEach((k) => { cur[k] = k === current ? 'page' : 'false'; });
+    return { cur };
+  }
+}
+</script>
+</body>
+</html>

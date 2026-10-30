@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Solicitar demo — mostrador_</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="ds/mostrador/components/bundle.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:#1b1c1e}a:hover{color:#c8401e}
+</style>
+</helmet>
+<div class="mw-page" style="font-family: var(--font-sans); color: var(--ink); background: var(--surface);">
+<dc-import name="Nav" current="demo" hint-size="100%,72px"></dc-import>
+<main>
+
+<section class="mw-hero" aria-labelledby="h-top">
+  <div class="mw-wrap mw-split mw-split--top">
+    <div class="mw-stack">
+      <span class="mw-kicker">// Solicitar demo</span>
+      <h1 id="h-top" class="mw-h1">Conoce mostrador_ <em class="mw-accent">en acción</em><span class="mw-cursor" aria-hidden="true">_</span></h1>
+      <p class="mw-lead">Mira cómo un agente de IA contestaría las preguntas de tus clientes por WhatsApp.</p>
+    </div>
+
+    <div class="mw-card" style="padding: 36px; gap: 20px; border: 2px solid var(--ink); box-shadow: 12px 12px 0 var(--signal);">
+      <sc-if value="{{showForm}}" hint-placeholder-val="{{true}}">
+        <div class="mw-stack-sm">
+          <h2 class="mw-h3" style="font-size: 28px; line-height: 34px;">Solicita tu demo</h2>
+          <p class="mw-small">Déjanos tus datos y cuéntanos qué vendes.</p>
+        </div>
+        <sc-if value="{{notSent}}" hint-placeholder-val="{{false}}">
+          <div class="ms-notice" role="alert">
+            <p style="margin: 0 0 4px;"><b>No se envió tu solicitud.</b></p>
+            <p class="mw-p" style="color: var(--ink); font-size: 14px; line-height: 20px;">El formulario aún no está conectado a un sistema que reciba solicitudes. Tus datos no se guardaron.</p>
+          </div>
+        </sc-if>
+        <form class="mw-form" onSubmit="{{submit}}" noValidate="{{yes}}" aria-label="Solicitud de demo">
+          <div class="mw-grid mw-cols-2" style="gap: 18px;">
+            <div class="mw-fieldset">
+              <label for="f-nombre">Tu nombre</label>
+              <input id="f-nombre" class="mw-control" type="text" autocomplete="name" value="{{form.nombre}}" onChange="{{onNombre}}" aria-invalid="{{inv.nombre}}" aria-describedby="e-nombre" aria-required="true">
+              <sc-if value="{{err.nombre}}" hint-placeholder-val="{{false}}"><p id="e-nombre" class="mw-err">{{err.nombre}}</p></sc-if>
+            </div>
+            <div class="mw-fieldset">
+              <label for="f-negocio">Tu negocio</label>
+              <input id="f-negocio" class="mw-control" type="text" autocomplete="organization" value="{{form.negocio}}" onChange="{{onNegocio}}" aria-invalid="{{inv.negocio}}" aria-describedby="e-negocio" aria-required="true">
+              <sc-if value="{{err.negocio}}" hint-placeholder-val="{{false}}"><p id="e-negocio" class="mw-err">{{err.negocio}}</p></sc-if>
+            </div>
+          </div>
+          <div class="mw-stack-sm" style="gap: 8px;">
+            <div class="mw-grid mw-cols-2" style="gap: 18px;">
+              <div class="mw-fieldset">
+                <label for="f-correo">Correo</label>
+                <input id="f-correo" class="mw-control" type="email" autocomplete="email" placeholder="tu@correo.com" value="{{form.correo}}" onChange="{{onCorreo}}" aria-invalid="{{inv.correo}}" aria-describedby="e-correo h-contacto">
+                <sc-if value="{{err.correo}}" hint-placeholder-val="{{false}}"><p id="e-correo" class="mw-err">{{err.correo}}</p></sc-if>
+              </div>
+              <div class="mw-fieldset">
+                <label for="f-whatsapp">WhatsApp</label>
+                <input id="f-whatsapp" class="mw-control" type="tel" autocomplete="tel" placeholder="10 dígitos" value="{{form.whatsapp}}" onChange="{{onWhatsapp}}" aria-invalid="{{inv.whatsapp}}" aria-describedby="e-whatsapp h-contacto">
+                <sc-if value="{{err.whatsapp}}" hint-placeholder-val="{{false}}"><p id="e-whatsapp" class="mw-err">{{err.whatsapp}}</p></sc-if>
+              </div>
+            </div>
+            <p id="h-contacto" class="mw-small">Con uno basta.</p>
+          </div>
+          <div class="mw-fieldset">
+            <label for="f-giro">Giro <span class="mw-opt">(opcional)</span></label>
+            <select id="f-giro" class="mw-control" value="{{form.giro}}" onChange="{{onGiro}}">
+              <option value="">Elige uno</option>
+              <option value="ropa">Ropa y calzado</option>
+              <option value="refacciones">Refaccionaria</option>
+              <option value="ferreteria">Ferretería</option>
+              <option value="electronica">Electrónica</option>
+              <option value="distribuidor">Distribuidor o mayorista</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+          <button type="submit" class="ms-btn mw-cta mw-btn-lg" style="width: 100%;">Solicitar demo</button>
+          <p class="mw-small">Solo usaremos tus datos para contactarte sobre la demo.</p>
+        </form>
+      </sc-if>
+      <sc-if value="{{showConfirm}}" hint-placeholder-val="{{false}}">
+        <div class="mw-stack-sm" role="status">
+          <span class="ms-tag ms-tag--ok" style="align-self: flex-start;">✓ solicitud recibida</span>
+          <h2 class="mw-h3" style="font-size: 28px; line-height: 34px;">Recibimos tu solicitud.</h2>
+          <p class="mw-p">Te contactaremos por el medio que nos dejaste para acordar la demo.</p>
+          <a class="mw-more" href="Main.dc.html" style="align-self: flex-start;">Volver al inicio →</a>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+</section>
+
+</main>
+<dc-import name="Footer" hint-size="100%,220px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"vista":{"editor":"enum","options":["formulario","confirmación"],"default":"formulario","section":"Estados"},"$preview":{"width":1440,"height":1300}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const st = this.state || {};
+    const form = st.form || { nombre: '', negocio: '', giro: '', correo: '', whatsapp: '' };
+    const err = st.err || {};
+    const set = (k) => (e) => {
+      const next = { ...form, [k]: e.target.value };
+      const nextErr = { ...err };
+      delete nextErr[k];
+      if (k === 'correo' || k === 'whatsapp') { if (nextErr.correo === 'Déjanos un correo o un WhatsApp.') delete nextErr.correo; if (nextErr.whatsapp === ' ') delete nextErr.whatsapp; }
+      this.setState({ form: next, err: nextErr });
+    };
+    const validate = (f) => {
+      const out = {};
+      if (!f.nombre.trim()) out.nombre = 'Escribe tu nombre.';
+      if (!f.negocio.trim()) out.negocio = 'Escribe el nombre de tu negocio.';
+      const correo = f.correo.trim();
+      const tel = f.whatsapp.trim();
+      if (!correo && !tel) {
+        out.correo = 'Déjanos un correo o un WhatsApp.';
+        out.whatsapp = ' ';
+      }
+      if (correo && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo)) out.correo = 'Revisa el correo: falta algo.';
+      if (tel && tel.replace(/\D/g, '').length < 10) out.whatsapp = 'El número debe tener al menos 10 dígitos.';
+      return out;
+    };
+    const submit = (e) => {
+      if (e && e.preventDefault) e.preventDefault();
+      const v = validate(form);
+      if (Object.keys(v).length) {
+        this.setState({ err: v, notSent: false });
+        return;
+      }
+      // Sin integración: no hay endpoint configurado para recibir solicitudes.
+      this.setState({ err: {}, notSent: true });
+    };
+    const vista = this.props.vista ?? 'formulario';
+    const inv = {};
+    ['nombre', 'negocio', 'correo', 'whatsapp'].forEach((k) => { inv[k] = err[k] ? 'true' : 'false'; });
+    return {
+      form, err, inv,
+      notSent: !!st.notSent,
+      showForm: vista !== 'confirmación',
+      showConfirm: vista === 'confirmación',
+      yes: true,
+      submit,
+      onNombre: set('nombre'),
+      onNegocio: set('negocio'),
+      onGiro: set('giro'),
+      onCorreo: set('correo'),
+      onWhatsapp: set('whatsapp'),
+    };
+  }
+}
+</script>
+</body>
+</html>
